@@ -1,85 +1,84 @@
 @import url(../../styles/main.css);
 
 .calendar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.header-calendar{
-  margin-bottom: 20px;
+.header-calendar {
+    margin-bottom: 20px;
 }
 
-.month{
-  width: 160px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
+.month {
+    width: 160px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.year{
-  font-size: 18px;
-  font-weight: 400;
+.year {
+    font-size: 18px;
+    font-weight: 400;
 }
 
-.button{
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 24px;
-  transition: .2s;
-  color: #9b9b9ba8;
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.2s;
+    color: #9b9b9ba8;
 }
 
-.button:hover{
-  color: #333;
+.button:hover {
+    color: #333;
 }
 
 .table {
-  border-spacing: 0;
-  border: 1px solid #9b9b9ba8;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+    border-spacing: 0;
+    border: 1px solid #9b9b9ba8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-
-.table-head{
-  height: 35px;
+.table-head {
+    height: 35px;
 }
 
-.table-body{
-  height: 45px;
+.table-body {
+    height: 45px;
 }
 
-.header-cell{
-  font-size: 16px;
-  font-weight: 700;
+.header-cell {
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.header-cell:first-child{
-  border-top-left-radius: 10px;
+.header-cell:first-child {
+    border-top-left-radius: 10px;
 }
 
-.header-cell:last-child{
-  border-top-right-radius: 10px;
+.header-cell:last-child {
+    border-top-right-radius: 10px;
 }
 
 .header-cell,
 .body-cell {
-  border: 1px solid #9b9b9ba8;
-  min-width: 45px;
-  text-align: center;
+    border: 1px solid #9b9b9ba8;
+    min-width: 45px;
+    text-align: center;
 }
 
 .body-cell {
-  cursor: pointer;
-  font-size: 20px;
+    cursor: pointer;
+    font-size: 20px;
 }
 
-.header-calendar{
-  display: flex;
-  margin-top: 30px;
-  align-items: center;
-  gap: 30px;
+.header-calendar {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    gap: 30px;
 }
