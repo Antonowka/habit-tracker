@@ -1,5 +1,5 @@
 import './styles/main.css';
 
-import { calendar } from './modules/calendar/calendar';
+import { renderCalendar, MONTHS, YEARS } from './modules/calendar/calendar';
 
-calendar();
+renderCalendar(MONTHS, YEARS);
