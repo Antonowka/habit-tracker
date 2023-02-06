@@ -140,5 +140,3 @@ export function renderCalendar(month: number, year: number): void {
     headerCalendar.appendChild(nextButton);
     calendar.appendChild(table);
 }
-
-renderCalendar(MONTHS, YEARS);
