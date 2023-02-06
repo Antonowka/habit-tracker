@@ -1,2 +1,6 @@
 @import url(./normalize.css);
 @import url(./root.css);
+
+html{
+  font-family: 'Roboto', sans-serif;
+}
