@@ -1,7 +1,7 @@
 import './calendar.css';
 
-export const MONTHS = new Date().getMonth();
-export const YEARS = new Date().getFullYear();
+export const curMonths = new Date().getMonth();
+export const curYears = new Date().getFullYear();
 
 const calendar = document.createElement('div') as HTMLElement;
 calendar.innerHTML = (calendar as unknown) as string;
