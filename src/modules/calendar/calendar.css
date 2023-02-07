@@ -55,12 +55,11 @@
     font-weight: 700;
 }
 
-.header-cell:first-child {
-    border-top-left-radius: 10px;
-}
-
-.header-cell:last-child {
-    border-top-right-radius: 10px;
+.body-cell-habits,
+.body-cell-goal,
+.body-cell-achieved{
+  padding: 0 20px;
+  text-align: center;
 }
 
 .header-cell,
