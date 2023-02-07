@@ -4,7 +4,6 @@ export const curMonths = new Date().getMonth();
 export const curYears = new Date().getFullYear();
 
 const calendar = document.createElement('div') as HTMLElement;
-calendar.innerHTML = (calendar as unknown) as string;
 calendar.className = 'calendar';
 document.body.appendChild(calendar);
 
