@@ -148,12 +148,12 @@ export function renderCalendar(month: number, year: number): void {
     calendar.appendChild(table);
 
     // create cell Goal and Achieved
-    const headCellGoal = document.createElement('td');
-    headCellGoal.className = 'header-cell-goal';
-    headCellGoal.textContent = 'Goal';
-    tableRow.appendChild(headCellGoal);
-    const headCellLast = document.createElement('td');
-    headCellLast.className = 'header-cell-achieved';
-    headCellLast.textContent = 'Achieved';
-    tableRow.appendChild(headCellLast);
+    const bodyCellLasts = document.createElement('td');
+    bodyCellLasts.className = 'body-cell-goal';
+    bodyCellLasts.textContent = 'Goal';
+    tableRow.appendChild(bodyCellLasts);
+    const bodyCellAchieved = document.createElement('td');
+    bodyCellAchieved.className = 'body-cell-achieved';
+    bodyCellAchieved.textContent = 'Achieved';
+    tableRow.appendChild(bodyCellAchieved);
 }
