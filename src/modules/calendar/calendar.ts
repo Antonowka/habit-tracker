@@ -38,6 +38,14 @@ export function renderCalendar(month: number, year: number): void {
     const tableRow = document.createElement('tr');
     tableRow.className = 'body-row';
 
+    // create cell HABITs. First table cell
+    const headCellHabits = document.createElement('th');
+    headerRow.appendChild(headCellHabits);
+    const tableCellHabits = document.createElement('td');
+    tableCellHabits.textContent = 'Habits';
+    tableCellHabits.className = 'body-cell-habits';
+    tableRow.appendChild(tableCellHabits);
+
     // create the header row with the days of the week
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const firstDayOfMonth = date.getDay();
@@ -138,4 +146,14 @@ export function renderCalendar(month: number, year: number): void {
     monthSelect.appendChild(yearSelect);
     headerCalendar.appendChild(nextButton);
     calendar.appendChild(table);
+
+    // create cell Goal and Achieved
+    const headCellGoal = document.createElement('td');
+    headCellGoal.className = 'header-cell-goal';
+    headCellGoal.textContent = 'Goal';
+    tableRow.appendChild(headCellGoal);
+    const headCellLast = document.createElement('td');
+    headCellLast.className = 'header-cell-achieved';
+    headCellLast.textContent = 'Achieved';
+    tableRow.appendChild(headCellLast);
 }
