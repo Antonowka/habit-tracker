@@ -1,14 +1,12 @@
 @import url(../../styles/main.css);
 
 .calendar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    margin: 0 auto;
 }
 
 .header-calendar {
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .month {
@@ -41,6 +39,7 @@
     border: 1px solid #9b9b9ba8;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin-left: 100px;
 }
 
 .table-head {
