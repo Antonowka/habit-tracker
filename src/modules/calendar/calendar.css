@@ -35,8 +35,6 @@
 }
 
 .table {
-    border-spacing: 0;
-    border: 1px solid #9b9b9ba8;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-left: 100px;
@@ -60,18 +58,25 @@
 .body-cell-achieved{
   padding: 0 20px;
   text-align: center;
+  border-bottom: 1px solid #9b9b9ba8;
 }
 
 .header-cell,
 .body-cell {
-    border: 1px solid #9b9b9ba8;
+    border-top: 1px solid #9b9b9ba8;
     min-width: 45px;
     text-align: center;
+    border-right: 1px solid #9b9b9ba8;
+}
+.header-cell:nth-child(2),
+.body-cell:nth-child(2) {
+    border-left: 1px solid #9b9b9ba8;
 }
 
 .body-cell {
     cursor: pointer;
     font-size: 20px;
+    border-bottom: 1px solid #9b9b9ba8;
 }
 
 .header-calendar {
