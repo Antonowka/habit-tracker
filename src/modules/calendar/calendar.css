@@ -1,0 +1,105 @@
+@import url(../../styles/main.css);
+
+.calendar {
+    margin: 0 auto;
+}
+
+.header-calendar {
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.month {
+    width: 170px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.year {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.2s;
+    color: #9b9b9ba8;  /* design process */
+}
+
+.button:hover {
+    color: #333;  /* design process */
+}
+
+.table {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 100px;
+}
+
+.table-head {
+    height: 35px;
+}
+
+.table-body {
+    height: 45px;
+}
+
+.header-cell {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.body-cell-habits,
+.body-cell-goal,
+.body-cell-achieved{
+  padding: 0 20px;
+  text-align: center;
+  border-bottom: 1px solid #9b9b9ba8;  /* design process */
+}
+
+.header-cell,
+.body-cell {
+    border-top: 1px solid #9b9b9ba8;  /* design process */
+    min-width: 45px;
+    text-align: center;
+    border-right: 1px solid #9b9b9ba8;  /* design process */
+}
+.header-cell:nth-child(2),
+.body-cell:nth-child(2) {
+    border-left: 1px solid #9b9b9ba8;  /* design process */
+}
+
+.body-cell {
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom: 1px solid #9b9b9ba8;  /* design process */
+}
+
+.header-calendar {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    gap: 30px;
+}
+
+.current-day{
+  position: relative;
+  color: rgb(0, 102, 255); /* design process */
+}
+
+.current-day::after{
+  z-index: -1;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translate(25%, -15%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ecececcc; /* design process */
+}

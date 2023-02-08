@@ -1,0 +1,8 @@
+/* 
+colors/font-size/margins/paddings/animation - 
+all everything that is used more than once in the project 
+*/
+
+:root{
+  --main-color: #fff;
+}
