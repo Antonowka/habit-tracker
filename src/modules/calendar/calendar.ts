@@ -58,23 +58,30 @@ export function renderCalendar(month: number, year: number): void {
         const headCell = document.createElement('th');
         headCell.className = 'header-cell';
         headCell.textContent = (day as unknown) as string;
-
-        if (headCell.textContent === '0') {
-            headCell.textContent = 'Sun';
-            headCell.style.color = 'Red';
-        } else if (headCell.textContent === '1') {
-            headCell.textContent = 'Mon';
-        } else if (headCell.textContent === '2') {
-            headCell.textContent = 'Tue';
-        } else if (headCell.textContent === '3') {
-            headCell.textContent = 'Wed';
-        } else if (headCell.textContent === '4') {
-            headCell.textContent = 'Thu';
-        } else if (headCell.textContent === '5') {
-            headCell.textContent = 'Fri';
-        } else if (headCell.textContent === '6') {
-            headCell.textContent = 'Sat';
-            headCell.style.color = 'Red';
+        switch (headCell.textContent) {
+            case '0':
+                headCell.textContent = 'Sun';
+                headCell.style.color = 'Red';
+                break;
+            case '1':
+                headCell.textContent = 'Mon';
+                break;
+            case '2':
+                headCell.textContent = 'Tue';
+                break;
+            case '3':
+                headCell.textContent = 'Wed';
+                break;
+            case '4':
+                headCell.textContent = 'Thu';
+                break;
+            case '5':
+                headCell.textContent = 'Fri';
+                break;
+            case '6':
+                headCell.textContent = 'Sat';
+                headCell.style.color = 'Red';
+                break;
         }
         headerRow.appendChild(headCell);
     });
