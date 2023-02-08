@@ -104,7 +104,7 @@ export function renderCalendar(month: number, year: number): void {
                 bodyCell.id = `${months[date.getMonth()]}-${date.getFullYear()}-${dateId}`;
             }
             if (currentDay === bodyCell.textContent) {
-                bodyCell.classList.toggle('day-now');
+                bodyCell.classList.toggle('current-day');
             }
             tableRow.appendChild(bodyCell);
             dateCounter.setDate(dateCounter.getDate() + 1);
