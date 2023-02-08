@@ -91,7 +91,7 @@ export function renderCalendar(month: number, year: number): void {
     // fill in the calendar with the correct days
     const dateCounter = new Date(date.getFullYear(), date.getMonth(), 1);
     const endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    const dateNow = new Date().getDate().toString();
+    const currentDay = new Date().getDate().toString();
     while (dateCounter <= endDate) {
         for (let i = 0; i < 31; i++) {
             const bodyCell = document.createElement('td');
@@ -103,7 +103,7 @@ export function renderCalendar(month: number, year: number): void {
                 bodyCell.textContent = (dateCounter.getDate() as unknown) as string;
                 bodyCell.id = `${months[date.getMonth()]}-${date.getFullYear()}-${dateId}`;
             }
-            if (dateNow === bodyCell.textContent) {
+            if (currentDay === bodyCell.textContent) {
                 bodyCell.classList.toggle('day-now');
             }
             tableRow.appendChild(bodyCell);
