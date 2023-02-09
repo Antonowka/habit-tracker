@@ -6,8 +6,8 @@ newHabitBtn.innerHTML = '+ New Habit';
 export const calendarDiv = document.querySelector('.calendar');
 newHabitBtn.addEventListener('click', clickBtn);
 
-export function insertAddBtn(a: HTMLElement) {
-    a?.after(newHabitBtn);
+export function insertAddBtn() {
+    return newHabitBtn;
 }
 
 export function createRow() {
