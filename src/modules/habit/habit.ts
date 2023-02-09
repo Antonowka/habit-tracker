@@ -29,20 +29,14 @@ export function createRow() {
     // get qty day of month **********
     const allDayOfMonth = document.querySelectorAll('.body-cell');
     const arrayAllDayOfMonth = Array.from(allDayOfMonth);
-    const daysOfMonth = [];
-
-    arrayAllDayOfMonth.forEach((e) => {
-        if (e.id.length > 0) {
-            daysOfMonth.push(1);
-        }
-    });
+    const daysOfMonth = arrayAllDayOfMonth.filter((e) => e.id !== '').length;
     // *************
 
     const cellTableHabit = document.createElement('td');
     cellTableHabit.className = `td-habit`;
     (document.querySelector('.table-body')?.lastElementChild as HTMLElement).append(cellTableHabit);
 
-    for (let i = 1; i < daysOfMonth.length + 1; i++) {
+    for (let i = 1; i < daysOfMonth + 1; i++) {
         const cellTable = document.createElement('td');
         cellTable.className = `td-${i}`;
         cellTable.addEventListener('click', coloredTd);
