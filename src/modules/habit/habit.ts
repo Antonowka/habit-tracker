@@ -3,11 +3,11 @@ import { clickBtn } from './modalHabit';
 const newHabitBtn = document.createElement('button');
 newHabitBtn.className = 'btn-new-habit';
 newHabitBtn.innerHTML = '+ New Habit';
-const calendarDiv = document.querySelector('.calendar');
+export const calendarDiv = document.querySelector('.calendar');
 newHabitBtn.addEventListener('click', clickBtn);
 
-export function insertAddBtn() {
-    calendarDiv?.after(newHabitBtn);
+export function insertAddBtn(a: HTMLElement) {
+    a?.after(newHabitBtn);
 }
 
 export function createRow() {
