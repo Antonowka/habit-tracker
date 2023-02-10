@@ -61,7 +61,7 @@ export function renderCalendar(month: number, year: number): void {
         switch (headCell.textContent) {
             case '0':
                 headCell.textContent = 'Sun';
-                headCell.style.color = 'Red';
+                headCell.style.color = 'var(--main-red)';
                 break;
             case '1':
                 headCell.textContent = 'Mon';
@@ -80,7 +80,7 @@ export function renderCalendar(month: number, year: number): void {
                 break;
             case '6':
                 headCell.textContent = 'Sat';
-                headCell.style.color = 'Red';
+                headCell.style.color = 'var(--main-red)';
                 break;
         }
         headerRow.appendChild(headCell);

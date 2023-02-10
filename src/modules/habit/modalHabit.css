@@ -19,11 +19,12 @@
   width: 500px;
   height: 300px;
   z-index: 500;
-  background-color: white;
+  background-color: var(--main-color);
   animation: 0.3s show ease;
   gap: 20px;
   flex-direction: column;
   padding: 20px;
+  border-radius: var(--border-radius);
 }
 
 @keyframes show {
@@ -47,10 +48,12 @@
 .btn-new-habit {
   min-width: 70px;
   height: 40px;
-  background: #333;
-  color: #fff;
+  background: var(--main-font-color);
+  color: var(--main-color);
   font-size: 1rem;
   cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
 }
 
 .btn-new-habit {
@@ -62,29 +65,84 @@
   font-size: 2rem;
 }
 
-#modal-name-input,
-#modal-goal-input {
+.modal-name-input,
+.modal-goal-input {
   height: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--main-font-color);
+  padding-left: 10px;
 }
 
 tr[class^="row-"] {
   height: 45px;
 }
 
+tr[class^="row-"]:last-child .td-habit {
+  border-bottom-left-radius: var(--border-radius);
+}
+tr[class^="row-"]:last-child .td-achieved {
+  border-bottom-right-radius: var(--border-radius);
+}
+
+tr[class^="row-"] .td-colored {
+  height: 45px;
+  color: var(--main-color);
+}
+
+.td-habit {
+  color: var(--main-font-color);
+  font-weight: 700;
+}
+
+tr[class^="row-"]:nth-child(7n+1) .td-colored,
+tr[class^="row-"]:nth-child(7n+1) .td-habit { 
+  background: var(--habit-7);
+}
+tr[class^="row-"]:nth-child(7n+2) .td-colored,
+tr[class^="row-"]:nth-child(7n+2) .td-habit {
+  background: var(--habit-1);
+}
+tr[class^="row-"]:nth-child(7n+3) .td-colored,
+tr[class^="row-"]:nth-child(7n+3) .td-habit {
+  background: var(--habit-2);
+}
+tr[class^="row-"]:nth-child(7n+4) .td-colored,
+tr[class^="row-"]:nth-child(7n+4) .td-habit {
+  background: var(--habit-3);
+}
+tr[class^="row-"]:nth-child(7n+5) .td-colored,
+tr[class^="row-"]:nth-child(7n+5) .td-habit {
+  background: var(--habit-4);
+}
+tr[class^="row-"]:nth-child(7n+6) .td-colored,
+tr[class^="row-"]:nth-child(7n+6) .td-habit {
+  background: var(--habit-5);
+}
+tr[class^="row-"]:nth-child(7n+7) .td-colored,
+tr[class^="row-"]:nth-child(7n+7) .td-habit {
+  background: var(--habit-6); 
+}
+
 td[class^="td-"] {
-  border: 1px solid #9b9b9ba8;
+  border-bottom: 1px solid var(--table-border); /* design process */
+  border-right: 1px solid var(--table-border); /* design process */
   cursor: pointer;
   text-align: center;
 }
 
-.td-colored {
-  background-color: #fdf2d0;
+td[class^="td-"]:nth-child(1) {
+  border-left: 1px solid var(--table-border); /* design process */
+  border-right: none;
+}
+
+td[class^="td-"]:nth-child(2) {
+  border-left: 1px solid var(--table-border); /* design process */
 }
 
 .td-complete {
-  background-color: rgb(148, 184, 86);
+  background-color: var(--habit-achieved);
 }
 
 .modal-input-error {
-  border: 2px solid red;
+  border: 2px solid var(--main-red);
 }

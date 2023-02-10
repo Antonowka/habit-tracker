@@ -22,6 +22,7 @@ habitModalName.className = 'modal-name';
 habitModalName.innerHTML = 'Habit Name';
 
 const habitModalNameInput = document.createElement('input');
+habitModalNameInput.className = 'modal-name-input';
 habitModalNameInput.id = 'modal-name-input';
 habitModalNameInput.placeholder = 'Eg. Exercise';
 
@@ -30,6 +31,7 @@ habitModalGoal.className = 'modal-goal';
 habitModalGoal.innerHTML = 'Goal';
 
 const habitModalGoalInput = document.createElement('input');
+habitModalGoalInput.className = 'modal-goal-input';
 habitModalGoalInput.id = 'modal-goal-input';
 habitModalGoalInput.placeholder = 'Number of times to perform habit in a month';
 habitModalGoalInput.pattern = '[0-9]{2}';
@@ -69,7 +71,7 @@ export function closeModal() {
 
 export function saveModal() {
     validateModalForms();
-    if (habitModalNameInput.classList.length == 0 && habitModalGoalInput.classList.length == 0) {
+    if (habitModalNameInput.className === 'modal-name-input' && habitModalGoalInput.className === 'modal-goal-input') {
         createRow();
         fillRow();
         closeModal();
@@ -84,16 +86,16 @@ function validateGoal(e: Event) {
 }
 
 function validateModalForms() {
-    if (habitModalNameInput.value.length == 0) {
+    if (habitModalNameInput.value.length === 0) {
         habitModalNameInput.classList.add('modal-input-error');
     } else {
         habitModalNameInput.classList.remove('modal-input-error');
     }
 
     if (
-        habitModalGoalInput.value.length == 0 ||
+        habitModalGoalInput.value.length === 0 ||
         Number(habitModalGoalInput.value) > 31 ||
-        Number(habitModalGoalInput.value) == 0
+        Number(habitModalGoalInput.value) === 0
     ) {
         habitModalGoalInput.classList.add('modal-input-error');
     } else {
