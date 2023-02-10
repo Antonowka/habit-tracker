@@ -77,6 +77,13 @@ tr[class^="row-"] {
   height: 45px;
 }
 
+tr[class^="row-"]:last-child .td-habit {
+  border-bottom-left-radius: var(--border-radius);
+}
+tr[class^="row-"]:last-child .td-achieved {
+  border-bottom-right-radius: var(--border-radius);
+}
+
 tr[class^="row-"] .td-colored {
   height: 45px;
   color: var(--main-color);
