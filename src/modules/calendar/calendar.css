@@ -61,6 +61,10 @@
   border-bottom: 1px solid #9b9b9ba8;  /* design process */
 }
 
+.body-cell{
+    height: 45px;
+}
+
 .header-cell,
 .body-cell {
     border-top: 1px solid #9b9b9ba8;  /* design process */

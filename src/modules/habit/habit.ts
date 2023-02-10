@@ -69,7 +69,7 @@ export function coloredTd(e: Event) {
     (e.target as HTMLElement).classList.toggle('td-colored');
 
     if ((e.target as HTMLElement).innerHTML === '') {
-        (e.target as HTMLElement).innerHTML = '+';
+        (e.target as HTMLElement).innerHTML = '&#10004;';
     } else {
         (e.target as HTMLElement).innerHTML = '';
     }
