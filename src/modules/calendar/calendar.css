@@ -14,6 +14,7 @@
     text-align: center;
     font-size: 24px;
     font-weight: 700;
+    color: var(--main-font-color);
 }
 
 .year {
@@ -27,11 +28,11 @@
     cursor: pointer;
     font-size: 24px;
     transition: 0.2s;
-    color: #9b9b9ba8;  /* design process */
+    color: var(--table-border);  /* design process */
 }
 
 .button:hover {
-    color: #333;  /* design process */
+    color: var(--main-font-color);  /* design process */
 }
 
 .table {
@@ -51,6 +52,7 @@
 .header-cell {
     font-size: 16px;
     font-weight: 700;
+    color: var(--main-font-color);
 }
 
 .body-cell-habits,
@@ -58,29 +60,36 @@
 .body-cell-achieved{
   padding: 0 20px;
   text-align: center;
-  border-bottom: 1px solid #9b9b9ba8;  /* design process */
+  border-bottom: 1px solid var(--table-border);  /* design process */
 }
 
 .body-cell{
     height: 45px;
 }
 
+.header-cell:nth-child(2){
+    border-top-left-radius: 5px;
+}
+.header-cell:last-child{
+    border-top-right-radius: 5px;
+}
+
 .header-cell,
 .body-cell {
-    border-top: 1px solid #9b9b9ba8;  /* design process */
+    border-top: 1px solid var(--table-border);
     min-width: 45px;
     text-align: center;
-    border-right: 1px solid #9b9b9ba8;  /* design process */
+    border-right: 1px solid var(--table-border);
 }
 .header-cell:nth-child(2),
 .body-cell:nth-child(2) {
-    border-left: 1px solid #9b9b9ba8;  /* design process */
+    border-left: 1px solid var(--table-border);
 }
 
 .body-cell {
     cursor: pointer;
     font-size: 20px;
-    border-bottom: 1px solid #9b9b9ba8;  /* design process */
+    border-bottom: 1px solid var(--table-border);
 }
 
 .header-calendar {
@@ -92,7 +101,8 @@
 
 .current-day{
   position: relative;
-  color: rgb(0, 102, 255); /* design process */
+  color: var(--current-day); 
+  font-weight: 700;
 }
 
 .current-day::after{
@@ -101,9 +111,10 @@
   position: absolute;
   left: 0;
   right: 0;
-  transform: translate(25%, -15%);
+  transform: translate(28%, -16%);
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ecececcc; /* design process */
+  background: var(--current-day-circle); 
+  border: 1px solid var(--current-day);
 }
