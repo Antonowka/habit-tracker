@@ -1,0 +1,98 @@
+label {
+    font-size: 24px;
+}
+
+input {
+    padding: 10px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.buttonAuth {
+    height: 50px;
+    width: 80%;
+    color: aliceblue;
+    background-color: #000000;
+    margin: 0 auto;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttonAuth[disabled] {
+    color: #d2d5db;
+    background: #6c7589;
+    cursor: not-allowed;
+}
+
+.authorizationConteiner {
+    max-width: 400px;
+    margin: 200px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.authorizationButtonsChangeConteiner {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+
+.wrapperButtonChange {
+    display: flex;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.buttonAuth:active {
+    background-color: cadetblue;
+}
+
+.registration {
+    margin-top: 1%;
+    margin-right: 10%;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.createButton {
+    width: 350px;
+    margin-top: 1%;
+    margin-right: 10%;
+}
+
+.registration:active {
+    color: #000000;
+}
+
+.wrapperRegistrationText {
+    display: flex;
+    justify-content: end;
+}
+
+.showError {
+    color: deeppink;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.error {
+    color: red;
+}
+
+.activeAuth {
+    background-color: aliceblue;
+    color: grey;
+    border: none;
+}
+
+.hideAuth {
+    display: none;
+}
