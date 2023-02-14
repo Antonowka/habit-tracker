@@ -1,0 +1,118 @@
+@import url(../../styles/main.css);
+
+.calendar {
+    margin: 0 auto;
+}
+
+.header-calendar {
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.month {
+    width: 170px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--main-font-color);
+}
+
+.year {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.2s;
+    color: var(--table-border);  /* design process */
+}
+
+.button:hover {
+    color: var(--main-font-color);  /* design process */
+}
+
+.table {
+    margin-left: 100px;
+}
+
+.table-head {
+    height: 35px;
+}
+
+.table-body {
+    height: 45px;
+}
+
+.header-cell {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--main-font-color);
+}
+
+.body-cell-habits,
+.body-cell-goal,
+.body-cell-achieved{
+  padding: 0 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--table-border);  /* design process */
+}
+
+.body-cell{
+    height: 45px;
+}
+
+.header-cell:nth-child(2){
+    border-top-left-radius: 5px;
+}
+.header-cell:last-child{
+    border-top-right-radius: 5px;
+}
+
+.header-cell,
+.body-cell {
+    border-top: 1px solid var(--table-border);
+    min-width: 45px;
+    text-align: center;
+    border-right: 1px solid var(--table-border);
+}
+.header-cell:nth-child(2),
+.body-cell:nth-child(2) {
+    border-left: 1px solid var(--table-border);
+}
+
+.body-cell {
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom: 1px solid var(--table-border);
+}
+
+.header-calendar {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    gap: 30px;
+}
+
+.current-day{
+  position: relative;
+  color: var(--current-day); 
+  font-weight: 700;
+}
+
+.current-day::after{
+  z-index: -1;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translate(28%, -16%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--current-day-circle); 
+  border: 1px solid var(--current-day);
+}
