@@ -1,15 +1,26 @@
 @import url(./normalize.css);
 @import url(./root.css);
-@import url(./nodes.css);
+@import url(./header.css);
 
 html{
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
-
+/* footer bottom page */
 body{
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  background: var(--dark-gray);
+  width: 100%;
+  max-height: 100%;
+  flex: 0 0 auto;
 }
