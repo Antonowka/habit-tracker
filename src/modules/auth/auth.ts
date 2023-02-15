@@ -1,11 +1,9 @@
 import './auth.css';
 import { authorizationButtonsChangeForm, authorizationPage, hidePage } from './page';
-import { authentificationEmailWithPassword, authorization, loginBD, readOneUserToBD, writeUserToBD } from './api';
+import { authentificationEmailWithPassword, authorization, loginBD, readAllUsersToBD, writeUserToBD } from './api';
 import { validation } from './validation';
-import { returnToken, returnTokenName, saveTokenAndName } from './token';
+import { returnToken, returnTokenEmail, saveTokenAndName } from './token';
 import { createBody } from './body';
-import { curMonths, curYears, renderCalendar } from '../calendar/calendar';
-import { calendarDiv, insertAddBtn } from '../habit/habit';
 import { renderMainPage } from '../render/render';
 
 const BODY = document.querySelector('body') as HTMLElement;
@@ -14,9 +12,9 @@ export function checkToken() {
     const token: string | null = localStorage.getItem('IdToken2');
     if (token) {
         const token = returnToken();
-        const nameUser = returnTokenName();
-        if (token && nameUser) {
-            readOneUserToBD(nameUser, token).then((data) => console.log(data));
+        const email = returnTokenEmail();
+        if (token && email) {
+            readAllUsersToBD(email);
             renderMainPage();
         }
         hidePage();
@@ -40,7 +38,7 @@ function authentificationFunction() {
             const token = returnToken();
             const nameUser = returnToken();
             if (token && nameUser) {
-                readOneUserToBD(token, nameUser);
+                readAllUsersToBD(email);
                 hidePage();
                 renderMainPage();
             }
@@ -82,12 +80,15 @@ function authorizationChangeButton() {
             loginBD(login);
             saveTokenAndName('nameToDoUser', login);
         }
+        if (email) {
+            saveTokenAndName('emailForRead', email);
+        }
         authorization(email, password)
-            .then(() => writeUserToBD(createBody(), login))
+            .then(() => writeUserToBD(createBody(), email))
             .then((id) => {
                 if (id) {
                     saveTokenAndName('IdToken2', id);
-                    readOneUserToBD(login, id);
+                    readAllUsersToBD(email);
                     hidePage();
                     renderMainPage();
                 }

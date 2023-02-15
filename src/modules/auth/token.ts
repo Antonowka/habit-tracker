@@ -12,3 +12,6 @@ export function returnToken() {
 export function returnTokenName() {
     return localStorage.getItem('nameToDoUser');
 }
+export function returnTokenEmail() {
+    return localStorage.getItem('emailForRead');
+}
