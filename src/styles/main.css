@@ -1,6 +1,15 @@
 @import url(./normalize.css);
 @import url(./root.css);
+@import url(./nodes.css);
 
 html{
+  height: 100%;
   font-family: 'Roboto', sans-serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
 }
