@@ -61,6 +61,18 @@ export function fillRow(i: number) {
 
     (tdHabit as HTMLElement).innerHTML = `${allHabits[i].name}`;
     (tdGoal as HTMLElement).innerHTML = `${allHabits[i].goal}`;
+
+    const arrHabitDates = allHabits[i].date;
+    const allDays = Array.from(document.querySelectorAll('.body-cell'));
+    const allDaysId = allDays.map((el) => el.id);
+    const matchedHabitDates = arrHabitDates.filter((el: string) => allDaysId.indexOf(el) > -1);
+    const matchedHabitDays = matchedHabitDates.map((el: string) => Number(el.split('-')[2]));
+
+    for (let index = 0; index < matchedHabitDays.length; index++) {
+        const activeHabit = (tdRow as NodeList)[matchedHabitDays[index]];
+        (activeHabit as HTMLElement).classList.toggle('td-colored');
+        (activeHabit as HTMLElement).innerHTML = '&#10004;';
+    }
 }
 
 export function coloredTd(e: Event) {
@@ -111,9 +123,39 @@ export function countAchieved(e: Event) {
     }
 }
 
+export function countAchievedUpdate() {
+    const allColoredTd = document.querySelectorAll('.td-colored');
+    const allColoredTdArray = Array.prototype.slice.call(allColoredTd);
+    const allRow = document.querySelectorAll('[class^="row-"]');
+
+    allColoredTdArray.forEach(
+        (el) =>
+            ((((document.querySelector(`.${el.parentElement.className}`)?.lastChild as HTMLElement)
+                .innerHTML as unknown) as number) =
+                Number((document.querySelector(`.${el.parentElement.className}`)?.lastChild as HTMLElement).innerHTML) +
+                1)
+    );
+
+    for (let index = 0; index < allRow.length; index++) {
+        if (
+            Number((allRow as NodeList)[index].lastChild?.textContent) >=
+            Number(
+                (allRow as NodeList)[index].childNodes[(allRow as NodeList)[index].childNodes.length - 2].textContent
+            )
+        ) {
+            ((allRow as NodeList)[index].lastChild as HTMLElement).classList.add('td-complete');
+        } else {
+            ((allRow as NodeList)[index].lastChild as HTMLElement).classList.remove('td-complete');
+        }
+    }
+}
+
 export function renderHabits() {
     for (let i = 0; i < allHabits.length; i++) {
         createRow();
         fillRow(i);
     }
+    countAchievedUpdate();
+    document.querySelector('.next-button')?.addEventListener('click', renderHabits);
+    document.querySelector('.prev-button')?.addEventListener('click', renderHabits);
 }
