@@ -1,4 +1,5 @@
 import { clickBtn } from './modalHabit';
+import { allHabits } from './modalHabit';
 
 const newHabitBtn = document.createElement('button');
 newHabitBtn.className = 'btn-new-habit';
@@ -53,25 +54,51 @@ export function createRow() {
     (document.querySelector('.table-body')?.lastElementChild as HTMLElement).append(cellTableAchieved);
 }
 
-export function fillRow() {
-    const inputHabitName = (document.getElementById('modal-name-input') as HTMLInputElement).value;
-    const inputHabitGoal = (document.getElementById('modal-goal-input') as HTMLInputElement).value;
-
+export function fillRow(i: number) {
     const tdHabit = document.querySelector('.table-body')?.lastElementChild?.firstElementChild;
     const tdRow = document.querySelector('.table-body')?.lastElementChild?.childNodes;
     const tdGoal = (tdRow as NodeList)[(tdRow as NodeList).length - 2];
 
-    (tdHabit as HTMLElement).innerHTML = `${inputHabitName}`;
-    (tdGoal as HTMLElement).innerHTML = `${inputHabitGoal}`;
+    (tdHabit as HTMLElement).innerHTML = `${allHabits[i].name}`;
+    (tdGoal as HTMLElement).innerHTML = `${allHabits[i].goal}`;
+
+    const arrHabitDates = allHabits[i].date;
+    const allDays = Array.from(document.querySelectorAll('.body-cell'));
+    const allDaysId = allDays.map((el) => el.id);
+    const matchedHabitDates = arrHabitDates.filter((el: string) => allDaysId.indexOf(el) > -1);
+    const matchedHabitDays = matchedHabitDates.map((el: string) => Number(el.split('-')[2]));
+
+    for (let index = 0; index < matchedHabitDays.length; index++) {
+        const activeHabit = (tdRow as NodeList)[matchedHabitDays[index]];
+        (activeHabit as HTMLElement).classList.toggle('td-colored');
+        (activeHabit as HTMLElement).innerHTML = '&#10004;';
+    }
 }
 
 export function coloredTd(e: Event) {
+    const currTdNumber = Number((e.target as Element).classList[0].slice(3));
+    const currDate = document.querySelectorAll('.body-cell')[currTdNumber - 1];
+    const currParentNumber = Number((e.target as Element).parentElement?.className.slice(4));
+    const listAllDates = allHabits[currParentNumber - 1].date;
+
     (e.target as HTMLElement).classList.toggle('td-colored');
 
     if ((e.target as HTMLElement).innerHTML === '') {
         (e.target as HTMLElement).innerHTML = '&#10004;';
+
+        allHabits[currParentNumber - 1].date.push(currDate.id);
+        localStorage.setItem('RS-habit', JSON.stringify(allHabits));
     } else {
         (e.target as HTMLElement).innerHTML = '';
+
+        if (listAllDates.includes(currDate.id)) {
+            const newListAllDates = listAllDates.filter(function (f: string) {
+                return f !== currDate.id;
+            });
+            allHabits[currParentNumber - 1].date = newListAllDates;
+        }
+
+        localStorage.setItem('RS-habit', JSON.stringify(allHabits));
     }
 
     countAchieved(e);
@@ -94,4 +121,41 @@ export function countAchieved(e: Event) {
     } else {
         tdAchieved?.classList.remove('td-complete');
     }
+}
+
+export function countAchievedUpdate() {
+    const allColoredTd = document.querySelectorAll('.td-colored');
+    const allColoredTdArray = Array.prototype.slice.call(allColoredTd);
+    const allRow = document.querySelectorAll('[class^="row-"]');
+
+    allColoredTdArray.forEach(
+        (el) =>
+            ((((document.querySelector(`.${el.parentElement.className}`)?.lastChild as HTMLElement)
+                .innerHTML as unknown) as number) =
+                Number((document.querySelector(`.${el.parentElement.className}`)?.lastChild as HTMLElement).innerHTML) +
+                1)
+    );
+
+    for (let index = 0; index < allRow.length; index++) {
+        if (
+            Number((allRow as NodeList)[index].lastChild?.textContent) >=
+            Number(
+                (allRow as NodeList)[index].childNodes[(allRow as NodeList)[index].childNodes.length - 2].textContent
+            )
+        ) {
+            ((allRow as NodeList)[index].lastChild as HTMLElement).classList.add('td-complete');
+        } else {
+            ((allRow as NodeList)[index].lastChild as HTMLElement).classList.remove('td-complete');
+        }
+    }
+}
+
+export function renderHabits() {
+    for (let i = 0; i < allHabits.length; i++) {
+        createRow();
+        fillRow(i);
+    }
+    countAchievedUpdate();
+    document.querySelector('.next-button')?.addEventListener('click', renderHabits);
+    document.querySelector('.prev-button')?.addEventListener('click', renderHabits);
 }

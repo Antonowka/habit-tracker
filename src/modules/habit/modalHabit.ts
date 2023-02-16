@@ -42,6 +42,12 @@ btnModalSave.className = 'btn-modal-save';
 btnModalSave.innerHTML = 'Save';
 btnModalSave.addEventListener('click', saveModal);
 
+if (localStorage.getItem('RS-habit') === null) {
+    localStorage.setItem('RS-habit', JSON.stringify([]));
+}
+
+export const allHabits = JSON.parse(localStorage.getItem('RS-habit') || '');
+
 export function clickBtn() {
     document.body.append(divTranspModal);
     document.body.append(divHabitModal);
@@ -72,9 +78,12 @@ export function closeModal() {
 export function saveModal() {
     validateModalForms();
     if (habitModalNameInput.className === 'modal-name-input' && habitModalGoalInput.className === 'modal-goal-input') {
-        createRow();
-        fillRow();
+        // createRow();
+        // fillRow();
         closeModal();
+        fillDB();
+        createRow();
+        fillRow(allHabits.length - 1);
     }
 }
 
@@ -101,4 +110,17 @@ function validateModalForms() {
     } else {
         habitModalGoalInput.classList.remove('modal-input-error');
     }
+}
+
+export function fillDB() {
+    const inputHabitName = (document.getElementById('modal-name-input') as HTMLInputElement).value;
+    const inputHabitGoal = (document.getElementById('modal-goal-input') as HTMLInputElement).value;
+
+    allHabits.push({
+        name: String(inputHabitName),
+        goal: Number(inputHabitGoal),
+        date: [],
+    });
+
+    localStorage.setItem('RS-habit', JSON.stringify(allHabits));
 }
