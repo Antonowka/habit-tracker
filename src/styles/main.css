@@ -1,26 +1,28 @@
 @import url(./normalize.css);
 @import url(./root.css);
 @import url(./header.css);
+@import url(./footer.css);
 
-html{
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
+html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 /* footer bottom page */
-body{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
+body {
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
 }
 
 .main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 .footer {
-  background: var(--dark-gray);
-  width: 100%;
-  max-height: 100%;
-  flex: 0 0 auto;
+    background: var(--nav-color);
+    width: 100%;
+    max-height: 100%;
+    flex: 0 0 auto;
 }
