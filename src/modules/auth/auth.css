@@ -2,21 +2,24 @@ label {
     font-size: 24px;
 }
 
-input {
+.auth__form input {
     padding: 10px;
     height: 40px;
     font-size: 24px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--main-font-color)
 }
 
 .buttonAuth {
     height: 50px;
     width: 80%;
     color: aliceblue;
-    background-color: #000000;
+    background-color: var(--main-font-color);
     margin: 0 auto;
     font-size: 22px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+    border: none;
 }
 
 .buttonAuth[disabled] {
@@ -26,27 +29,34 @@ input {
 }
 
 .authorizationConteiner {
-    max-width: 400px;
-    margin: 200px auto;
-    border: 1px solid black;
-    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 400px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--table-border);
+    border-radius: var(--border-radius);
     padding: 10px;
 }
 
 .authorizationButtonsChangeConteiner {
     display: flex;
     justify-content: end;
-    padding: 10px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
 }
 
 .wrapperButtonChange {
     display: flex;
+    gap: 20px;
 }
 
 .auth__form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: var(--main-font-color);
 }
 
 .buttonAuth:active {
@@ -54,20 +64,16 @@ input {
 }
 
 .registration {
-    margin-top: 1%;
-    margin-right: 10%;
     max-width: 200px;
     cursor: pointer;
 }
 
 .createButton {
     width: 350px;
-    margin-top: 1%;
-    margin-right: 10%;
 }
 
 .registration:active {
-    color: #000000;
+    color: var(--main-font-color);
 }
 
 .wrapperRegistrationText {
@@ -80,16 +86,17 @@ input {
 }
 
 .invalid {
-    border-color: red;
+    border: 2px solid var(--main-red);
+    border-radius: var(--border-radius);
 }
 
 .error {
-    color: red;
+    color: var(--main-red);
 }
 
 .activeAuth {
-    background-color: aliceblue;
-    color: grey;
+    background-color: var(--table-border);
+    color: var(--main-color);
     border: none;
 }
 

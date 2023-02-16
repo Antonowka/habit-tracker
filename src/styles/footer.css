@@ -1,0 +1,71 @@
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 20px 0;
+}
+
+.footer_icon,
+.footer_icon_link {
+  color: var(--main-font-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  padding: 18px;
+
+}
+
+.footer-icon-link{
+  color: var(--main-font-color);
+}
+
+.icon-school,
+.icon-github,
+.icon-youtube{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid var(--main-font-color);
+  transition: all .2s ease;
+}
+
+.footer-icon:hover > * {
+  color: var(--hover-footer);
+}
+
+.icon-school:hover,
+.icon-github:hover,
+.icon-youtube:hover {
+  border-color: var(--hover-footer);
+  transform: scale(1.1);
+}
+
+.icon-school:active,
+.icon-github:active,
+.icon-youtube:active {
+  transform: scale(1);
+}
+
+.copyright {
+  color: var(--main-font-color);
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.copyright-link {
+  font-size: 18px;
+  color: var(--main-font-color);
+  transition: 0.2s;
+}
+
+.copyright-link:hover {
+  color: var(--hover-footer);
+}
