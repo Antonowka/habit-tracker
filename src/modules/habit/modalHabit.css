@@ -64,8 +64,8 @@
 }
 
 .btn-new-habit {
-  margin-top: 30px;
-  margin-left: 30px;
+  /* margin-top: 30px;
+  margin-left: 30px; */
 }
 
 .modal-header {
@@ -107,7 +107,10 @@ tr[class^="row-"] .td-colored {
   color: var(--main-font-color);
   font-weight: 700;
   transition: .3s;
+  width: 140px;
+  padding: 0 5px;
 }
+
 .td-goal,
 .td-achieved{
   color: var(--main-font-color);

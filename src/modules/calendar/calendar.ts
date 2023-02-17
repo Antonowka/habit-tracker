@@ -4,9 +4,13 @@ import { main } from '../nodes/mainNodes';
 export const curMonths = new Date().getMonth();
 export const curYears = new Date().getFullYear();
 
+const calendarWrapper = document.createElement('div') as HTMLElement;
+calendarWrapper.className = 'calendar-wrapper';
+main.appendChild(calendarWrapper);
+
 const calendar = document.createElement('div') as HTMLElement;
 calendar.className = 'calendar';
-main.appendChild(calendar);
+calendarWrapper.appendChild(calendar);
 
 const headerCalendar = document.createElement('div') as HTMLElement;
 headerCalendar.className = 'header-calendar';
