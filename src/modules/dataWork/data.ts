@@ -1,5 +1,5 @@
 import { readAllUsersToBD } from '../auth/api';
-import { returnTokenName, returnToken, saveTokenAndName } from '../auth/token';
+import { returnToken, saveTokenAndName } from '../auth/token';
 
 // export async function createBodyData() {
 //     const token = returnToken();
