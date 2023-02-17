@@ -35,4 +35,5 @@ body.dark{
   --main-red: #ff8a8abf;
   transition: all 0.4s ease;
   --habit-shadow: #f3f3f3;
+  --table-border: #ffffff70;
 }
