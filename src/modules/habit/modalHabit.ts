@@ -10,7 +10,6 @@ divHabitModal.className = 'modal-add-habit';
 
 const habitModalHeader = document.createElement('div');
 habitModalHeader.className = 'modal-header';
-habitModalHeader.innerHTML = 'Create New Habit';
 
 const btnModalClose = document.createElement('button');
 btnModalClose.className = 'btn-modal-close';
@@ -21,7 +20,7 @@ const habitModalName = document.createElement('div');
 habitModalName.className = 'modal-name';
 habitModalName.innerHTML = 'Habit Name';
 
-const habitModalNameInput = document.createElement('input');
+export const habitModalNameInput = document.createElement('input');
 habitModalNameInput.className = 'modal-name-input';
 habitModalNameInput.id = 'modal-name-input';
 habitModalNameInput.placeholder = 'Eg. Exercise';
@@ -30,7 +29,7 @@ const habitModalGoal = document.createElement('div');
 habitModalGoal.className = 'modal-goal';
 habitModalGoal.innerHTML = 'Goal';
 
-const habitModalGoalInput = document.createElement('input');
+export const habitModalGoalInput = document.createElement('input');
 habitModalGoalInput.className = 'modal-goal-input';
 habitModalGoalInput.id = 'modal-goal-input';
 habitModalGoalInput.placeholder = 'Number of times to perform habit in a month';
@@ -65,6 +64,15 @@ export function clickBtn() {
 
     divTranspModal.style.display = 'flex';
     divHabitModal.style.display = 'flex';
+    btnModalSave.style.display = 'block';
+    habitModalHeader.innerHTML = 'Create New Habit';
+    if (document.querySelector('.btn-edit-save')) {
+        (document.querySelector('.btn-edit-save') as HTMLElement).style.display = 'none';
+    }
+
+    if (document.querySelector('.btn-edit-del')) {
+        (document.querySelector('.btn-edit-del') as HTMLElement).style.display = 'none';
+    }
 
     (document.getElementById('modal-name-input') as HTMLInputElement).value = '';
     (document.getElementById('modal-goal-input') as HTMLInputElement).value = '';
@@ -78,8 +86,6 @@ export function closeModal() {
 export function saveModal() {
     validateModalForms();
     if (habitModalNameInput.className === 'modal-name-input' && habitModalGoalInput.className === 'modal-goal-input') {
-        // createRow();
-        // fillRow();
         closeModal();
         fillDB();
         createRow();
@@ -94,7 +100,7 @@ function validateGoal(e: Event) {
         : (z as RegExpMatchArray)[1];
 }
 
-function validateModalForms() {
+export function validateModalForms() {
     if (habitModalNameInput.value.length === 0) {
         habitModalNameInput.classList.add('modal-input-error');
     } else {

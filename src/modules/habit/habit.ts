@@ -1,5 +1,6 @@
 import { clickBtn } from './modalHabit';
 import { allHabits } from './modalHabit';
+import { getModalEdit } from './editHabit';
 
 const newHabitBtn = document.createElement('button');
 newHabitBtn.className = 'btn-new-habit';
@@ -35,6 +36,7 @@ export function createRow() {
 
     const cellTableHabit = document.createElement('td');
     cellTableHabit.className = `td-habit`;
+    cellTableHabit.addEventListener('click', getModalEdit);
     (document.querySelector('.table-body')?.lastElementChild as HTMLElement).append(cellTableHabit);
 
     for (let i = 1; i < daysOfMonth + 1; i++) {

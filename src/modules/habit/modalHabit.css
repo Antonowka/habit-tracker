@@ -46,6 +46,8 @@
 }
 
 .btn-modal-save,
+.btn-edit-save,
+.btn-edit-del,
 .btn-new-habit {
   min-width: 70px;
   height: 40px;
@@ -55,6 +57,10 @@
   cursor: pointer;
   border: none;
   border-radius: var(--border-radius);
+}
+
+.btn-edit-del {
+  background: var(--main-red);
 }
 
 .btn-new-habit {
