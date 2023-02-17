@@ -1,13 +1,14 @@
-interface date {
-    date: string;
-}
-interface tracks {
+
+export interface data {
     name: string;
-    id: number;
-    tracks: Array<date>;
+    goal: number;
+    data: Array<string>;
 }
+
+export type MyHabitsList = [data];
+
 export interface habits {
-    habits: Array<tracks>;
+    habits: Array<data>;
 }
 export interface dataUser {
     habits: habits;

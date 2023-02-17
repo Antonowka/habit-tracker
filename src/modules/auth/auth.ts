@@ -9,10 +9,12 @@ import { renderMainPage } from '../render/render';
 const BODY = document.querySelector('body') as HTMLElement;
 
 export function checkToken() {
-    const token: string | null = localStorage.getItem('IdToken2');
+    const token: string | null = localStorage.getItem('IDForFined');
     if (token) {
         const token = returnToken();
         const email = returnTokenEmail();
+        console.log(email);
+        console.log(token);
         if (token && email) {
             readAllUsersToBD(email);
             renderMainPage();
@@ -87,7 +89,7 @@ function authorizationChangeButton() {
             .then(() => writeUserToBD(createBody(), email))
             .then((id) => {
                 if (id) {
-                    saveTokenAndName('IdToken2', id);
+                    saveTokenAndName('IDForFined', id);
                     readAllUsersToBD(email);
                     hidePage();
                     renderMainPage();

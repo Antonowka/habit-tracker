@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, collection, addDoc, updateDoc, doc, getDoc, getDocs } from 'firebase/firestore';
-import { habits } from '../../interface/interface';
+import { habits, MyHabitsList } from '../../interface/interface';
 import { showError } from './error';
 import { saveTokenAndName } from './token';
 
@@ -64,21 +64,22 @@ export function loginBD(login: string) {
 }
 
 //первый раз
-export async function writeUserToBD(users2: habits, login: string) {
+export async function writeUserToBD(habit: MyHabitsList, login: string) {
     const colections = collection(dataBase, login);
     try {
-        const docRef = await addDoc(colections, { users2 });
+        const docRef = await addDoc(colections, { habit });
         return docRef.id;
     } catch (e) {
         console.error('Error adding document: ', e);
     }
 }
 
-export async function updateUserToBD(users2: habits, login: string, token: string) {
+export async function updateUserToBD(habits: habits, login: string, token: string) {
     const update = doc(dataBase, login, token);
     try {
-        const docRef = await updateDoc(update, { users2 });
+        const docRef = await updateDoc(update, { habits });
         console.log('Document written with ID: ', docRef);
+        return docRef;
     } catch (e) {
         console.error('Error adding document: ', e);
     }
@@ -96,12 +97,11 @@ export async function updateUserToBD(users2: habits, login: string, token: strin
 
 export async function readAllUsersToBD(email: string) {
     const querySnapshot = await getDocs(collection(dataBase, email));
-
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         saveTokenAndName('IDForFined', doc.id);
         saveTokenAndName('BodyResp', JSON.stringify(doc.data()));
-        return doc.data();
+        console.log(doc.data());
     });
 }
 
