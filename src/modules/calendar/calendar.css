@@ -50,6 +50,70 @@
   }
 }
 
+.drop-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--main-font-color);
+  padding: 15px 0 15px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  transition: .3s;
+}
+.drop-menu:hover {
+  color: var(--hover-header);
+}
+
+.dropdown-content {
+  opacity: 0;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transition: all .3s ease;
+  background: var(--nav-color);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.logout-btn {
+  cursor: pointer;
+  margin-top: 30px;
+  transition: .3s;
+  width: 100%;
+  font-size: 16px;
+  color: var(--main-font-color);
+  border: none;
+  background: var(--main-red);
+  height: 40px;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.logout-btn:hover {
+  background: var(--delete-but-hover);
+}
+
+.logout-wrapper:hover .dropdown-content {
+  opacity: 1;
+  top: 70px;
+}
+
+.drop-menu-icon {
+  font-size: 16px;
+  transition: .3s;
+}
+
+.logout-wrapper:hover .drop-menu-icon {
+  transform: rotate(180deg);
+  color: var(--hover-header);
+}
+
+.logout-wrapper:hover .drop-menu  {
+  color: var(--hover-header);
+}
+
 .header-calendar {
     margin-bottom: 20px;
     justify-content: center;

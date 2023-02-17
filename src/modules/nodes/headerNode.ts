@@ -1,15 +1,14 @@
 import { header } from './mainNodes';
 
 export const nodsHeader = () => {
+    const userName = localStorage.nameToDoUser;
     const renderHeader = `
       <div class="nav-bar">
-        <span class="nav-logo"><a class="logo" href="#">Habit Tracker</a></span>
+        <span class="logo">Habit Tracker</span>
   
         <div class="menu">
           <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Instruction</a></li>
+            <li><a href="#">How it works</a></li>
           </ul>
         </div>
   
@@ -17,6 +16,12 @@ export const nodsHeader = () => {
           <div class="dark-light">
             <i class='bx bx-moon moon'></i>
             <i class='bx bx-sun sun'></i>
+          </div>
+          <div class="logout-wrapper">
+            <p class="drop-menu login-name">${userName}<span class="drop-menu-icon">&or;</span></p>
+              <div class="dropdown-content">
+                <button class="logout-btn">Logout </button>
+              </div>
           </div>
         </div>
       </div>
