@@ -6,9 +6,12 @@ export function saveTokenAndName(cell: string, token: string) {
 }
 
 export function returnToken() {
-    return localStorage.getItem('IdToken2');
+    return localStorage.getItem('IDForFined');
 }
 
-export function returnTokenName() {
-    return localStorage.getItem('nameToDoUser');
+export function returnTokenEmail() {
+    return localStorage.getItem('emailForRead');
+}
+export function returnTokenBody() {
+    return localStorage.getItem('RS-habit');
 }

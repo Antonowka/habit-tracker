@@ -1,14 +1,12 @@
-import { habits } from '../../interface/interface';
+import { MyHabitsList } from '../../interface/interface';
 
 export function createBody() {
-    const body: habits = {
-        habits: [
-            {
-                name: '',
-                id: 0,
-                tracks: [{ date: '' }],
-            },
-        ],
-    };
+    const body: MyHabitsList = [
+        {
+            name: '',
+            goal: 0,
+            data: [''],
+        },
+    ];
     return body;
 }
