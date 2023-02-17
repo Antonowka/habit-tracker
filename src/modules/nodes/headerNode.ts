@@ -30,4 +30,10 @@ export const nodsHeader = () => {
     nodes.className = 'navbar';
     nodes.innerHTML = renderHeader;
     header.appendChild(nodes);
+
+    const logout = document.querySelector('.logout-btn');
+    logout?.addEventListener('click', () => {
+        localStorage.clear();
+        location.reload();
+    });
 };
