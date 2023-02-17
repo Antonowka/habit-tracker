@@ -8,6 +8,10 @@ const calendarWrapper = document.createElement('div') as HTMLElement;
 calendarWrapper.className = 'calendar-wrapper';
 main.appendChild(calendarWrapper);
 
+const calendarDate = document.createElement('div') as HTMLElement;
+calendarDate.className = 'calendar-date';
+calendarWrapper.appendChild(calendarDate);
+
 const calendar = document.createElement('div') as HTMLElement;
 calendar.className = 'calendar';
 calendarWrapper.appendChild(calendar);
@@ -161,7 +165,7 @@ export function renderCalendar(month: number, year: number): void {
 
     calendar.innerHTML = '';
     headerCalendar.innerHTML = '';
-    calendar.appendChild(headerCalendar);
+    calendarDate.appendChild(headerCalendar);
     headerCalendar.appendChild(prevButton);
     headerCalendar.appendChild(monthSelect);
     monthSelect.appendChild(yearSelect);

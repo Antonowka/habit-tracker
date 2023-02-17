@@ -25,7 +25,7 @@ all everything that is used more than once in the project
   --habit-achieved: #4eb53edb;
   --habit-hover: #fafafa;
   --habit-shadow: #35363A;
-  /* Theme dark-mode */
+  --delete-but-hover: #ff2626bf;
 }
 
 body.dark{
