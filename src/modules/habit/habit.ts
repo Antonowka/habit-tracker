@@ -1,5 +1,7 @@
 import { clickBtn } from './modalHabit';
 import { allHabits } from './modalHabit';
+import { getModalEdit } from './editHabit';
+import { UPDATE } from '../dataChangeLocal/dataChange';
 
 const newHabitBtn = document.createElement('button');
 newHabitBtn.className = 'btn-new-habit';
@@ -35,6 +37,7 @@ export function createRow() {
 
     const cellTableHabit = document.createElement('td');
     cellTableHabit.className = `td-habit`;
+    cellTableHabit.addEventListener('click', getModalEdit);
     (document.querySelector('.table-body')?.lastElementChild as HTMLElement).append(cellTableHabit);
 
     for (let i = 1; i < daysOfMonth + 1; i++) {
@@ -88,6 +91,7 @@ export function coloredTd(e: Event) {
 
         allHabits[currParentNumber - 1].date.push(currDate.id);
         localStorage.setItem('RS-habit', JSON.stringify(allHabits));
+        UPDATE();
     } else {
         (e.target as HTMLElement).innerHTML = '';
 
@@ -99,6 +103,7 @@ export function coloredTd(e: Event) {
         }
 
         localStorage.setItem('RS-habit', JSON.stringify(allHabits));
+        UPDATE();
     }
 
     countAchieved(e);
