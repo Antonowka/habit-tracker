@@ -104,11 +104,3 @@ export async function readAllUsersToBD(email: string) {
         console.log(doc.data());
     });
 }
-
-// export function allCollection() {
-// }
-// ? Object.keys(data).map((key) => ({
-//   ...data[key],
-//   id: key,
-// }))
-// : [];

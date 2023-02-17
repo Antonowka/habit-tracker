@@ -5,7 +5,7 @@ export function createBody() {
         {
             name: '',
             goal: 0,
-            data:[''],
+            data: [''],
         },
     ];
     return body;
