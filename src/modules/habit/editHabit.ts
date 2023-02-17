@@ -3,6 +3,7 @@ import { allHabits, closeModal, habitModalNameInput, habitModalGoalInput } from 
 import { IHabit } from '../../interface/interface';
 import { validateModalForms } from './modalHabit';
 import { renderHabits } from './habit';
+import { UPDATE } from '../dataChangeLocal/dataChange';
 
 const btnEditSave = document.createElement('button');
 btnEditSave.className = 'btn-edit-save';
@@ -44,7 +45,7 @@ export function saveNewDB() {
         newHabitsDB[Number(btnEditSave.name) - 1].name = inputHabitName;
         newHabitsDB[Number(btnEditSave.name) - 1].goal = inputHabitGoal;
         localStorage.setItem('RS-habit', JSON.stringify(newHabitsDB));
-
+        UPDATE();
         document.querySelectorAll('[class^="row-"]').forEach((e) => e.remove());
         renderHabits();
     }
@@ -56,7 +57,7 @@ export function delHabitFromDB() {
     newHabitsDB.splice(Number(btnEditSave.name) - 1, 1);
     closeModal();
     localStorage.setItem('RS-habit', JSON.stringify(newHabitsDB));
-
+    UPDATE();
     document.querySelectorAll('[class^="row-"]').forEach((e) => e.remove());
     renderHabits();
 }

@@ -1,6 +1,7 @@
 import { clickBtn } from './modalHabit';
 import { allHabits } from './modalHabit';
 import { getModalEdit } from './editHabit';
+import { UPDATE } from '../dataChangeLocal/dataChange';
 
 const newHabitBtn = document.createElement('button');
 newHabitBtn.className = 'btn-new-habit';
@@ -90,6 +91,7 @@ export function coloredTd(e: Event) {
 
         allHabits[currParentNumber - 1].date.push(currDate.id);
         localStorage.setItem('RS-habit', JSON.stringify(allHabits));
+        UPDATE();
     } else {
         (e.target as HTMLElement).innerHTML = '';
 
@@ -101,6 +103,7 @@ export function coloredTd(e: Event) {
         }
 
         localStorage.setItem('RS-habit', JSON.stringify(allHabits));
+        UPDATE();
     }
 
     countAchieved(e);

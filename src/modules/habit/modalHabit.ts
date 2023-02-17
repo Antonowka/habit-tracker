@@ -1,5 +1,6 @@
 import './modalHabit.css';
 import { createRow, fillRow } from './habit';
+import { UPDATE } from '../dataChangeLocal/dataChange';
 
 const divTranspModal = document.createElement('div');
 divTranspModal.className = 'transparent-modal';
@@ -43,6 +44,7 @@ btnModalSave.addEventListener('click', saveModal);
 
 if (localStorage.getItem('RS-habit') === null) {
     localStorage.setItem('RS-habit', JSON.stringify([]));
+    UPDATE();
 }
 
 export const allHabits = JSON.parse(localStorage.getItem('RS-habit') || '');
@@ -129,4 +131,5 @@ export function fillDB() {
     });
 
     localStorage.setItem('RS-habit', JSON.stringify(allHabits));
+    UPDATE();
 }
