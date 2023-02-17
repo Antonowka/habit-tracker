@@ -1,6 +1,7 @@
 import './calendar.css';
 import { main } from '../nodes/mainNodes';
 
+export const currentDay = new Date().getDate().toString();
 export const curMonths = new Date().getMonth();
 export const curYears = new Date().getFullYear();
 
@@ -100,9 +101,6 @@ export function renderCalendar(month: number, year: number): void {
     // fill in the calendar with the correct days
     const dateCounter = new Date(date.getFullYear(), date.getMonth(), 1);
     const endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    const currentDay = new Date().getDate().toString();
-    const currentMonth = new Date().getMonth();
-    const currentYear = new Date().getFullYear();
     while (dateCounter <= endDate) {
         for (let i = 0; i < 31; i++) {
             const bodyCell = document.createElement('td');
@@ -116,8 +114,8 @@ export function renderCalendar(month: number, year: number): void {
             }
             if (
                 currentDay === bodyCell.textContent &&
-                currentMonth === dateCounter.getMonth() &&
-                currentYear === dateCounter.getFullYear()
+                curMonths === dateCounter.getMonth() &&
+                curYears === dateCounter.getFullYear()
             ) {
                 bodyCell.classList.toggle('current-day');
             }
