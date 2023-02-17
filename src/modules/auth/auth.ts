@@ -9,16 +9,12 @@ import { renderMainPage } from '../render/render';
 const BODY = document.querySelector('body') as HTMLElement;
 
 export function checkToken() {
-    const token: string | null = localStorage.getItem('IDForFined');
-    if (token) {
-        const token = returnToken();
-        const email = returnTokenEmail();
-        console.log(email);
-        console.log(token);
-        if (token && email) {
-            readAllUsersToBD(email);
-            renderMainPage();
-        }
+    // const token: string | null = localStorage.getItem('IDForFined');
+    const token = returnToken();
+    const email = returnTokenEmail();
+    if (token && email) {
+        readAllUsersToBD(email);
+        renderMainPage();
         hidePage();
     } else {
         BODY.append(authorizationButtonsChangeForm());
@@ -36,14 +32,13 @@ function authentificationFunction() {
         const email: string | null = (document.getElementById('email') as HTMLInputElement).value;
         const password: string | null = (document.getElementById('password') as HTMLInputElement).value;
         if (email && password) {
-            authentificationEmailWithPassword(email, password);
-            const token = returnToken();
-            const nameUser = returnToken();
-            if (token && nameUser) {
-                readAllUsersToBD(email);
-                hidePage();
-                renderMainPage();
-            }
+            authentificationEmailWithPassword(email, password).then(() => {
+                readAllUsersToBD(email).then(() => {
+                    hidePage();
+                    renderMainPage();
+                    saveTokenAndName('emailForRead', email);
+                });
+            });
         }
         e.preventDefault();
     });
