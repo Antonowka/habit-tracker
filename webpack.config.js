@@ -18,6 +18,10 @@ const baseConfig = {
                 test: /\.ts$/i,
                 use: 'ts-loader',
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                loader: 'file-loader',
+            },
         ],
     },
     resolve: {
