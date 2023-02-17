@@ -22,3 +22,9 @@ export interface dataUser {
 //         },
 //     ],
 // };
+
+export interface IHabit {
+    name: string;
+    goal: number;
+    date: string[];
+}
