@@ -69,10 +69,10 @@
 }
 
 .header-cell:nth-child(2){
-    border-top-left-radius: 5px;
+    border-top-left-radius: var(--border-radius);
 }
 .header-cell:last-child{
-    border-top-right-radius: 5px;
+    border-top-right-radius: var(--border-radius);
 }
 
 .header-cell,

@@ -4,7 +4,7 @@ all everything that is used more than once in the project
 */
 
 :root{
-  --main-color: #fff;
+  --main-color: #fafafa;
   --main-font-color: #444;
   --nav-color: #e0e0e0;
   --main-red: #ff4343bf;
@@ -23,6 +23,8 @@ all everything that is used more than once in the project
   --habit-6: #dfdfdfe0; 
   --habit-7: #e1a3a3ad;
   --habit-achieved: #4eb53edb;
+  --habit-hover: #fafafa;
+  --habit-shadow: #35363A;
   /* Theme dark-mode */
 }
 
@@ -32,4 +34,5 @@ body.dark{
   --main-font-color: #f3f3f3;
   --main-red: #ff8a8abf;
   transition: all 0.4s ease;
+  --habit-shadow: #f3f3f3;
 }

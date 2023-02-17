@@ -106,6 +106,7 @@ tr[class^="row-"] .td-colored {
 .td-habit {
   color: var(--main-font-color);
   font-weight: 700;
+  transition: .3s;
 }
 .td-goal,
 .td-achieved{
@@ -156,6 +157,16 @@ td[class^="td-"]:nth-child(1) {
 td[class^="td-"]:nth-child(2) {
   border-left: 1px solid var(--table-border); /* design process */
 }
+
+td[class^="td-"]:hover {
+  box-shadow: 0 0 10px var(--habit-shadow);
+}
+
+tr[class^="row-"]:hover .td-habit{
+  background: var(--main-color);
+  box-shadow: 0 0 12px var(--habit-shadow);
+}
+
 
 .td-complete {
   background-color: var(--habit-achieved);
