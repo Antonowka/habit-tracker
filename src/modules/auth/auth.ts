@@ -5,16 +5,21 @@ import { validation } from './validation';
 import { returnToken, returnTokenEmail, saveTokenAndName } from './token';
 import { createBody } from './body';
 import { renderMainPage } from '../render/render';
+import { SAVE_DATA_BD } from '../dataChangeLocal/dataChange';
 
 const BODY = document.querySelector('body') as HTMLElement;
 
 export function checkToken() {
-    // const token: string | null = localStorage.getItem('IDForFined');
     const token = returnToken();
     const email = returnTokenEmail();
     if (token && email) {
-        readAllUsersToBD(email);
-        renderMainPage();
+        readAllUsersToBD(email)
+            .then(() => {
+                SAVE_DATA_BD();
+            })
+            .then(() => {
+                renderMainPage();
+            });
         hidePage();
     } else {
         BODY.append(authorizationButtonsChangeForm());
@@ -33,11 +38,16 @@ function authentificationFunction() {
         const password: string | null = (document.getElementById('password') as HTMLInputElement).value;
         if (email && password) {
             authentificationEmailWithPassword(email, password).then(() => {
-                readAllUsersToBD(email).then(() => {
-                    hidePage();
-                    renderMainPage();
-                    saveTokenAndName('emailForRead', email);
-                });
+                readAllUsersToBD(email)
+                    .then(() => {
+                        hidePage();
+                        SAVE_DATA_BD();
+                        saveTokenAndName('emailForRead', email);
+                    })
+                    .then(() => {
+                        renderMainPage();
+                        history.go(0);
+                    });
             });
         }
         e.preventDefault();
@@ -80,16 +90,18 @@ function authorizationChangeButton() {
         if (email) {
             saveTokenAndName('emailForRead', email);
         }
-        authorization(email, password)
-            .then(() => writeUserToBD(createBody(), email))
-            .then((id) => {
-                if (id) {
-                    saveTokenAndName('IDForFined', id);
-                    readAllUsersToBD(email);
-                    hidePage();
-                    renderMainPage();
-                }
-            });
+        if (email && password) {
+            authorization(email, password)
+                .then(() => writeUserToBD(createBody(), email, login))
+                .then((id) => {
+                    if (id) {
+                        saveTokenAndName('IDForFined', id);
+                        readAllUsersToBD(email);
+                        hidePage();
+                        renderMainPage();
+                    }
+                });
+        }
         e.preventDefault();
         return { email, password };
     });

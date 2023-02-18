@@ -1,7 +1,14 @@
+import { returnTokenBodyBD } from '../auth/token';
 import { header } from './mainNodes';
 
 export const nodsHeader = () => {
-    const userName = localStorage.nameToDoUser;
+    let userName = localStorage.nameToDoUser;
+    if (!userName) {
+        const data = JSON.parse(returnTokenBodyBD() || '');
+        if (data.user) {
+            userName = JSON.stringify(data.user).replace(/[^\p{L}\d]/gu, '');
+        }
+    }
     const renderHeader = `
       <div class="nav-bar">
         <span class="logo">Habit Tracker</span>
