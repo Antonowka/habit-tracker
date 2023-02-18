@@ -64,10 +64,10 @@ export function loginBD(login: string) {
 }
 
 //первый раз
-export async function writeUserToBD(habit: MyHabitsList, login: string) {
+export async function writeUserToBD(habits: MyHabitsList, login: string, user: string) {
     const colections = collection(dataBase, login);
     try {
-        const docRef = await addDoc(colections, { habit });
+        const docRef = await addDoc(colections, { habits, user });
         return docRef.id;
     } catch (e) {
         console.error('Error adding document: ', e);
@@ -78,7 +78,7 @@ export async function updateUserToBD(habits: habits, login: string, token: strin
     const update = doc(dataBase, login, token);
     try {
         const docRef = await updateDoc(update, { habits });
-        console.log('Document written with ID: ', docRef);
+        // console.log('Document written with ID: ', docRef);
         return docRef;
     } catch (e) {
         console.error('Error adding document: ', e);
@@ -101,6 +101,6 @@ export async function readAllUsersToBD(email: string) {
         // doc.data() is never undefined for query doc snapshots
         saveTokenAndName('IDForFined', doc.id);
         saveTokenAndName('BodyResp', JSON.stringify(doc.data()));
-        console.log(doc.data());
+        // console.log(doc.data());
     });
 }

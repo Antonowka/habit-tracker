@@ -15,3 +15,6 @@ export function returnTokenEmail() {
 export function returnTokenBody() {
     return localStorage.getItem('RS-habit');
 }
+export function returnTokenBodyBD() {
+    return localStorage.getItem('BodyResp');
+}
