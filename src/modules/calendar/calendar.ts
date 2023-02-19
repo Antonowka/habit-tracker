@@ -1,12 +1,21 @@
 import './calendar.css';
 import { main } from '../nodes/mainNodes';
 
+export const currentDay = new Date().getDate().toString();
 export const curMonths = new Date().getMonth();
 export const curYears = new Date().getFullYear();
 
+const calendarWrapper = document.createElement('div') as HTMLElement;
+calendarWrapper.className = 'calendar-wrapper';
+main.appendChild(calendarWrapper);
+
+const calendarDate = document.createElement('div') as HTMLElement;
+calendarDate.className = 'calendar-date';
+calendarWrapper.appendChild(calendarDate);
+
 const calendar = document.createElement('div') as HTMLElement;
 calendar.className = 'calendar';
-main.appendChild(calendar);
+calendarWrapper.appendChild(calendar);
 
 const headerCalendar = document.createElement('div') as HTMLElement;
 headerCalendar.className = 'header-calendar';
@@ -92,9 +101,6 @@ export function renderCalendar(month: number, year: number): void {
     // fill in the calendar with the correct days
     const dateCounter = new Date(date.getFullYear(), date.getMonth(), 1);
     const endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    const currentDay = new Date().getDate().toString();
-    const currentMonth = new Date().getMonth();
-    const currentYear = new Date().getFullYear();
     while (dateCounter <= endDate) {
         for (let i = 0; i < 31; i++) {
             const bodyCell = document.createElement('td');
@@ -108,8 +114,8 @@ export function renderCalendar(month: number, year: number): void {
             }
             if (
                 currentDay === bodyCell.textContent &&
-                currentMonth === dateCounter.getMonth() &&
-                currentYear === dateCounter.getFullYear()
+                curMonths === dateCounter.getMonth() &&
+                curYears === dateCounter.getFullYear()
             ) {
                 bodyCell.classList.toggle('current-day');
             }
@@ -157,7 +163,7 @@ export function renderCalendar(month: number, year: number): void {
 
     calendar.innerHTML = '';
     headerCalendar.innerHTML = '';
-    calendar.appendChild(headerCalendar);
+    calendarDate.appendChild(headerCalendar);
     headerCalendar.appendChild(prevButton);
     headerCalendar.appendChild(monthSelect);
     monthSelect.appendChild(yearSelect);

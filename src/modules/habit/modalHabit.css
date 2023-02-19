@@ -45,6 +45,12 @@
   color: var(--main-font-color);
 }
 
+@media (max-width: 1200px){
+  .btn-new-habit {
+    margin-top: 30px;
+  }
+}
+
 .btn-modal-save,
 .btn-edit-save,
 .btn-edit-del,
@@ -58,16 +64,28 @@
   cursor: pointer;
   border: none;
   border-radius: var(--border-radius);
+  transition: .2s;
 }
 
 .btn-edit-del {
   background: var(--main-red);
+  color: var(--main-font-color);
 }
 
 .btn-new-habit,
 .btn-new-note {
   margin-top: 30px;
   margin-left: 30px;
+}
+
+.btn-edit-del:hover {
+  background: var(--delete-but-hover);
+}
+
+.btn-new-habit:hover,
+.btn-modal-save:hover,
+.btn-edit-save:hover {
+  background: var(--hover-footer);
 }
 
 .modal-header {
@@ -93,6 +111,17 @@ tr[class^="row-"] {
   height: 45px;
 }
 
+@media (max-width: 1600px){
+  tr[class^="row-"] {
+    height: 40px;
+  }
+}
+@media (max-width: 1380px){
+  tr[class^="row-"] {
+    height: 37px;
+  }
+}
+
 tr[class^="row-"]:last-child .td-habit {
   border-bottom-left-radius: var(--border-radius);
 }
@@ -101,14 +130,23 @@ tr[class^="row-"]:last-child .td-achieved {
 }
 
 tr[class^="row-"] .td-colored {
-  height: 45px;
   color: var(--main-color);
 }
 
 .td-habit {
   color: var(--main-font-color);
   font-weight: 700;
+  transition: .3s;
+  width: 140px;
+  padding: 0 5px;
 }
+
+@media (max-width: 1600px){
+  .td-habit {
+    font-size: 14px;
+  }
+}
+
 .td-goal,
 .td-achieved{
   color: var(--main-font-color);
@@ -157,6 +195,24 @@ td[class^="td-"]:nth-child(1) {
 
 td[class^="td-"]:nth-child(2) {
   border-left: 1px solid var(--table-border); /* design process */
+}
+
+/* hovers table */
+td[class^="td-"]:hover {
+  box-shadow: 0 0 10px var(--habit-shadow);
+}
+
+td.td-goal:hover {
+  box-shadow: none;
+}
+
+td.td-achieved:hover {
+  box-shadow: none;
+}
+
+tr[class^="row-"]:hover .td-habit{
+  background: var(--main-color);
+  box-shadow: 0 0 12px var(--habit-shadow);
 }
 
 .td-complete {

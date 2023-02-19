@@ -1,5 +1,5 @@
 import { readAllUsersToBD } from '../auth/api';
-import { returnToken, saveTokenAndName, returnTokenBody, returnTokenEmail } from '../auth/token';
+import { returnToken, saveTokenAndName, returnTokenBody, returnTokenEmail, returnTokenBodyBD } from '../auth/token';
 
 import { updateUserToBD } from '../auth/api';
 
@@ -7,6 +7,8 @@ export function UPDATE() {
     const body = JSON.parse(returnTokenBody() || '');
     const email = returnTokenEmail();
     const tokenID = returnToken();
+    // const data = JSON.parse(returnTokenBodyBD() || '');
+    // const user = JSON.stringify(data.user);
 
     if (body && email && tokenID) {
         updateUserToBD(body, email, tokenID).then(() => {
@@ -21,6 +23,6 @@ export function UPDATE() {
 }
 
 export function SAVE_DATA_BD() {
-    const body = JSON.parse(returnTokenBody() || '');
-    saveTokenAndName('RS-habit', body.habits);
+    const body = JSON.parse(returnTokenBodyBD() || '');
+    saveTokenAndName('RS-habit', JSON.stringify(body.habits));
 }
