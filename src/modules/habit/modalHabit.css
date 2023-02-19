@@ -7,7 +7,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(15, 14, 14, 0.6);
-  z-index: 400;
+  z-index: 10000;
   animation: 0.3s show ease;
 }
 
@@ -18,7 +18,7 @@
   transform: translate(-50%, -50%);
   width: 500px;
   min-height: 350px;
-  z-index: 500;
+  z-index: 11000;
   background-color: var(--main-color);
   animation: 0.3s show ease;
   gap: 30px;
@@ -54,7 +54,8 @@
 .btn-modal-save,
 .btn-edit-save,
 .btn-edit-del,
-.btn-new-habit {
+.btn-new-habit,
+.btn-new-note {
   min-width: 70px;
   height: 40px;
   background: var(--main-font-color);
@@ -69,6 +70,12 @@
 .btn-edit-del {
   background: var(--main-red);
   color: var(--main-font-color);
+}
+
+.btn-new-habit,
+.btn-new-note {
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .btn-edit-del:hover {

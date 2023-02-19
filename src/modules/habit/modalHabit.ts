@@ -1,18 +1,19 @@
 import './modalHabit.css';
 import { createRow, fillRow } from './habit';
 import { UPDATE } from '../dataChangeLocal/dataChange';
+import { divNoteModal } from '../notes/notes';
 
-const divTranspModal = document.createElement('div');
+export const divTranspModal = document.createElement('div');
 divTranspModal.className = 'transparent-modal';
 divTranspModal.addEventListener('click', closeModal);
 
 const divHabitModal = document.createElement('div');
 divHabitModal.className = 'modal-add-habit';
 
-const habitModalHeader = document.createElement('div');
+export const habitModalHeader = document.createElement('div');
 habitModalHeader.className = 'modal-header';
 
-const btnModalClose = document.createElement('button');
+export const btnModalClose = document.createElement('button');
 btnModalClose.className = 'btn-modal-close';
 btnModalClose.innerHTML = 'X';
 btnModalClose.addEventListener('click', closeModal);
@@ -83,6 +84,7 @@ export function clickBtn() {
 export function closeModal() {
     divTranspModal.style.display = 'none';
     divHabitModal.style.display = 'none';
+    divNoteModal.style.display = 'none';
 }
 
 export function saveModal() {
