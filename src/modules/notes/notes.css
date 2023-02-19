@@ -1,0 +1,103 @@
+.sticky-note {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  /* z-index: 200; */
+  color: var(--main-font-color);
+}
+
+.sticky-note:hover {
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.modal-add-note {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-height: 350px;
+  z-index: 11000;
+  background-color: var(--main-color);
+  animation: 0.3s show ease;
+  gap: 30px;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+.modal-note-input {
+  font-size: 18px;
+  height: 180px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--main-font-color);
+  padding-left: 10px;
+  margin-top: 20px;
+  width: 100%;
+  resize: none;
+}
+
+.btn-modal-note-save {
+  width: 100%;
+  height: 40px;
+  background: var(--main-font-color);
+  color: var(--main-color);
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+}
+
+.note-header{
+  height: 40px;
+  background-color: rgba(0,0,0,0.2);
+  cursor: move;
+}
+
+.note-header > span {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.note-body {
+  padding: 10px;
+  color: #444;
+}
+
+.btn-note-close,
+.btn-note-edit {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.btn-note-edit:hover {
+  transform: rotate(135deg) scale(1.2);
+}
+
+.btn-note-close:hover {
+  transform: scale(1.2);
+}
+
+.btn-note-close {
+  top: 5px;
+  right: 10px;
+}
+
+.btn-note-edit {
+  top: 10px;
+  right: 25px;
+  vertical-align: center;
+  transform: rotate(135deg);
+}
