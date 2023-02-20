@@ -5,7 +5,19 @@
 .logo{
   font-weight: 700;
   font-size: 32px;
-  color: var(--main-font-color);
+  color: var(--header-fonts);
+  display: flex;
+  align-items: center;
+}
+
+.logo-img{
+  background: url(../assets/images/logo.png);
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 5px;
 }
 
 .nav-bar{
@@ -31,7 +43,7 @@
   position: relative;
   font-size: 18px;
   font-weight: 400;
-  color: var(--main-font-color);
+  color: var(--header-fonts);
   text-decoration: none;
   transition: all .3s ease;
 }
@@ -44,18 +56,18 @@
   transform: translateX(-50%);
   height: 2px;
   width: 100%;
-  background-color: var(--hover-footer);
+  background-color: var(--hover-header);
   opacity: 0;
   transition: all 0.3s ease;
 }
 
 .nav-link:hover .how-work::before {
   opacity: 1;
-  color: var(--hover-footer);
+  color: var(--hover-header);
 }
 
 .nav-link:hover .how-work {
-  color: var(--hover-footer);
+  color: var(--hover-header);
 }
 
 .nav-bar .darkLight-searchBox{

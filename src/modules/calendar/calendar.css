@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--main-font-color);
+  color: var(--header-fonts);
   padding: 25px 0 25px 15px;
   border: none;
   cursor: pointer;

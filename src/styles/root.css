@@ -16,6 +16,7 @@ all everything that is used more than once in the project
   --moon-hover: #b1b1b1;
   --sun-hover: #fffc2e;
   --copyright-fonts-color: #bbb;
+  --header-fonts: #444;
 
   /* Table roots */
   --table-border: #9b9b9ba8;
