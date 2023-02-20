@@ -55,7 +55,7 @@
 }
 
 .note-header{
-  height: 40px;
+  height: 34px;
   background-color: rgba(0,0,0,0.2);
   font-family: 'Julee', cursive;
   cursor: grab;
@@ -67,7 +67,7 @@
 
 .note-header > span {
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 10px;
   font-weight: bold;
   font-size: 1.1rem;
@@ -105,12 +105,12 @@
 }
 
 .btn-note-close {
-  top: 8px;
+  top: 6px;
   right: 7px;
 }
 
 .btn-note-edit {
-  top: 10px;
+  top: 8px;
   right: 25px;
   vertical-align: center;
   transform: rotate(135deg);
