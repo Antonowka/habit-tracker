@@ -14,6 +14,7 @@ const noteModalInput = document.createElement('textarea');
 noteModalInput.className = 'modal-note-input';
 noteModalInput.id = 'modal-note-input';
 noteModalInput.placeholder = 'Type note HERE';
+noteModalInput.maxLength = 125;
 
 const btnModalNoteSave = document.createElement('button');
 btnModalNoteSave.className = 'btn-modal-note-save';

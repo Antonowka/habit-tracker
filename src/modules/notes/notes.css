@@ -1,11 +1,12 @@
 .sticky-note {
   position: absolute;
-  height: 200px;
+  height: 210px;
   width: 200px;
   box-shadow: 0 0 5px var(--habit-shadow);
   color: var(--main-font-color);
   user-select: none;
   transition: box-shadow .2s ease;
+  overflow: hidden;
 }
 
 .sticky-note:hover {
@@ -56,6 +57,7 @@
 .note-header{
   height: 40px;
   background-color: rgba(0,0,0,0.2);
+  font-family: 'Julee', cursive;
   cursor: move;
 }
 
@@ -71,6 +73,10 @@
 .note-body {
   padding: 10px;
   color: var(--sticker-fonts);
+  font-family: 'Julee', cursive;
+  font-size: 20px;
+  word-break: break-all;
+  
 }
 
 .btn-note-close,
