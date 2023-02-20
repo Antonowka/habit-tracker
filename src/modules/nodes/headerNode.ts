@@ -15,7 +15,7 @@ export const nodsHeader = () => {
   
         <div class="menu">
           <ul class="nav-links">
-            <li><a href="#">How it works</a></li>
+            <li class="nav-link"><span class="how-work">How it works</span></li>
           </ul>
         </div>
   

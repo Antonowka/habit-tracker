@@ -24,17 +24,19 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  cursor: pointer;
 }
 
-.nav-links li a{
+.how-work{
   position: relative;
   font-size: 18px;
   font-weight: 400;
   color: var(--main-font-color);
   text-decoration: none;
+  transition: all .3s ease;
 }
 
-.nav-links li a::before{
+.how-work::before{
   content: '';
   position: absolute;
   left: 50%;
@@ -47,8 +49,13 @@
   transition: all 0.3s ease;
 }
 
-.nav-links li:hover a::before{
+.nav-link:hover .how-work::before {
   opacity: 1;
+  color: var(--hover-footer);
+}
+
+.nav-link:hover .how-work {
+  color: var(--hover-footer);
 }
 
 .nav-bar .darkLight-searchBox{
