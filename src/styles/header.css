@@ -86,10 +86,17 @@
 
 .dark-light:hover i.moon{
   color: var(--moon-hover);
+  transform: scale(1.15);
 }
 
 .dark-light:hover i.sun{
   color: var(--sun-hover);
+  transform: scale(1.15);
+}
+
+.dark-light:active i.moon,
+.dark-light:active i.sun {
+  transform: scale(1);
 }
 
 .dark-light i.sun{
