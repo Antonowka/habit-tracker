@@ -56,8 +56,7 @@
   align-items: center;
 }
 
-.darkLight-searchBox .dark-light,
-.darkLight-searchBox .searchToggle{
+.darkLight-searchBox .dark-light {
   height: 40px;
   width: 40px;
   display: flex;
@@ -66,8 +65,7 @@
   margin-right: 5px;
 }
 
-.dark-light i,
-.searchToggle i{
+.dark-light i {
   position: absolute;
   color: var(--main-font-color);
   font-size: 22px;
