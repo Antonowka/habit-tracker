@@ -13,6 +13,8 @@ all everything that is used more than once in the project
   --border-radius: 8px;
   --sticker-fonts: #444;
   --sticker-hover-fonts: #747474;
+  --moon-hover: #b1b1b1;
+  --sun-hover: #fffc2e;
 
   /* Table roots */
   --table-border: #9b9b9ba8;
