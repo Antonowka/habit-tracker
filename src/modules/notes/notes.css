@@ -97,12 +97,10 @@
 }
 
 .btn-note-edit:hover {
-  transform: rotate(135deg) scale(1.1);
   color: var(--sticker-hover-fonts);
 }
 
 .btn-note-close:hover {
-  transform: scale(1.1);
   color: var(--delete-but-hover);
 }
 
