@@ -3,7 +3,7 @@ import { authorizationButtonsChangeForm, authorizationPage, hidePage } from './p
 import { authentificationEmailWithPassword, authorization, loginBD, readAllUsersToBD, writeUserToBD } from './api';
 import { validation } from './validation';
 import { returnToken, returnTokenEmail, saveTokenAndName } from './token';
-import { createBody } from './body';
+import { createBody, createNote } from './body';
 import { renderMainPage } from '../render/render';
 import { SAVE_DATA_BD } from '../dataChangeLocal/dataChange';
 
@@ -92,7 +92,7 @@ function authorizationChangeButton() {
         }
         if (email && password) {
             authorization(email, password)
-                .then(() => writeUserToBD(createBody(), email, login))
+                .then(() => writeUserToBD(createBody(), email, login, createNote()))
                 .then((id) => {
                     if (id) {
                         saveTokenAndName('IDForFined', id);

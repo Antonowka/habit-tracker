@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, collection, addDoc, updateDoc, doc, getDoc, getDocs } from 'firebase/firestore';
-import { habits, MyHabitsList } from '../../interface/interface';
+import { habits, INotes, MyHabitsList, MyNotesList } from '../../interface/interface';
 import { showError } from './error';
 import { saveTokenAndName } from './token';
 
@@ -64,20 +64,20 @@ export function loginBD(login: string) {
 }
 
 //первый раз
-export async function writeUserToBD(habits: MyHabitsList, login: string, user: string) {
+export async function writeUserToBD(habits: MyHabitsList, login: string, user: string, notes: MyNotesList) {
     const colections = collection(dataBase, login);
     try {
-        const docRef = await addDoc(colections, { habits, user });
+        const docRef = await addDoc(colections, { habits, user, notes });
         return docRef.id;
     } catch (e) {
         console.error('Error adding document: ', e);
     }
 }
 
-export async function updateUserToBD(habits: habits, login: string, token: string) {
+export async function updateUserToBD(habits: habits, login: string, token: string, notes: INotes) {
     const update = doc(dataBase, login, token);
     try {
-        const docRef = await updateDoc(update, { habits });
+        const docRef = await updateDoc(update, { habits, notes });
         // console.log('Document written with ID: ', docRef);
         return docRef;
     } catch (e) {
