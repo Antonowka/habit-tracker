@@ -1,6 +1,6 @@
 .sticky-note {
   position: absolute;
-  height: 210px;
+  max-height: 210px;
   width: 200px;
   box-shadow: 0 0 5px var(--habit-shadow);
   color: var(--main-font-color);
