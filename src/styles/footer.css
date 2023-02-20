@@ -123,10 +123,10 @@
 
 .copyright-link {
   font-size: 18px;
-  color: var(--main-font-color);
+  color: var(--footer-fonts);
   transition: 0.2s;
 }
 
 .copyright-link:hover {
-  color: var(--hover-footer);
+  color: var(--hover-header);
 }

@@ -43,6 +43,11 @@
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--main-font-color);
+  transition: .2s;
+}
+
+.btn-modal-close:hover {
+  color: var(--delete-but-hover);
 }
 
 @media (max-width: 1200px){
@@ -88,11 +93,14 @@
 }
 
 .btn-new-habit:hover,
-.btn-new-note:hover,
+.btn-new-note:hover {
+  background: var(--hover-header);
+}
+
+.btn-modal-note-save:hover,
 .btn-modal-save:hover,
-.btn-edit-save:hover,
-.btn-modal-note-save:hover {
-  background: var(--hover-footer);
+.btn-edit-save:hover{
+  background: var(--habit-achieved);
 }
 
 .modal-header {
