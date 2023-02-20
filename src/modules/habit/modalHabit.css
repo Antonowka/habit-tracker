@@ -72,19 +72,26 @@
   color: var(--main-font-color);
 }
 
-.btn-new-habit,
 .btn-new-note {
-  margin-top: 30px;
-  margin-left: 30px;
+  position: absolute;
+  right: 20px;
 }
 
-.btn-edit-del:hover {
+@media (max-width: 1200px){
+  .btn-new-note {
+    margin-top: 30px;
+  }
+}
+
+.btn-edit-del:hover{
   background: var(--delete-but-hover);
 }
 
 .btn-new-habit:hover,
+.btn-new-note:hover,
 .btn-modal-save:hover,
-.btn-edit-save:hover {
+.btn-edit-save:hover,
+.btn-modal-note-save:hover {
   background: var(--hover-footer);
 }
 

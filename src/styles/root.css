@@ -11,6 +11,8 @@ all everything that is used more than once in the project
   --hover-footer: #adadad;
   --hover-header: #6e8dff;
   --border-radius: 8px;
+  --sticker-fonts: #444;
+  --sticker-hover-fonts: #747474;
 
   /* Table roots */
   --table-border: #9b9b9ba8;
@@ -26,7 +28,7 @@ all everything that is used more than once in the project
   --habit-achieved: #4eb53edb;
   --habit-hover: #fafafa;
   --habit-shadow: #35363A;
-  --delete-but-hover: #ff2626bf;
+  --delete-but-hover: #ff3d3dbf;
 }
 
 body.dark{

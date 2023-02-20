@@ -2,13 +2,13 @@
   position: absolute;
   height: 200px;
   width: 200px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  /* z-index: 200; */
+  box-shadow: 0 0 5px var(--habit-shadow);
   color: var(--main-font-color);
+  user-select: none;
 }
 
 .sticky-note:hover {
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px var(--habit-shadow);
 }
 
 .modal-add-note {
@@ -36,6 +36,7 @@
   margin-top: 20px;
   width: 100%;
   resize: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-modal-note-save {
@@ -48,6 +49,7 @@
   border: none;
   border-radius: var(--border-radius);
   margin-top: 20px;
+  transition: .2s;
 }
 
 .note-header{
@@ -62,12 +64,12 @@
   left: 10px;
   font-weight: bold;
   font-size: 1.1rem;
-  color: #444;
+  color: var(--sticker-fonts);
 }
 
 .note-body {
   padding: 10px;
-  color: #444;
+  color: var(--sticker-fonts);
 }
 
 .btn-note-close,
@@ -78,21 +80,24 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  color: #444;
+  font-size: 1.2rem;
+  color: var(--sticker-fonts);
+  transition: .2s;
 }
 
 .btn-note-edit:hover {
-  transform: rotate(135deg) scale(1.2);
+  transform: rotate(135deg) scale(1.1);
+  color: var(--sticker-hover-fonts);
 }
 
 .btn-note-close:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  color: var(--delete-but-hover);
 }
 
 .btn-note-close {
-  top: 5px;
-  right: 10px;
+  top: 8px;
+  right: 7px;
 }
 
 .btn-note-edit {

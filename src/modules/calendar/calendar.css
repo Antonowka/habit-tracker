@@ -5,6 +5,7 @@
 .calendar-wrapper {
     padding: 0 20px;
     transition: all 0.4s ease;
+    position: relative;
 }
 
 .calendar {
