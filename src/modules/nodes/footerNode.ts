@@ -3,11 +3,11 @@ import { footer } from './mainNodes';
 export const nodsFooter = () => {
     const renderFooter = `
     <div class="footer-links">
-      <div class="footer-icon icon-youtube"><a class="footer-icon-link" target="_blank" href="https://rs.school/js/">RS-S</a></div>
-      <div class="footer-icon icon-github"><a class="footer-icon-link" target="_blank" href="https://github.com/Antonowka">Git</a></div>
-      <div class="footer-icon icon-github"><a class="footer-icon-link" target="_blank" href="https://github.com/max7394">Git</a></div>
-      <div class="footer-icon icon-github"><a class="footer-icon-link" target="_blank" href="https://github.com/Sergey-Lesnevskiy">Git</a></div>
-      <div class="footer-icon icon-school"><a class="footer-icon-link" target="_blank" href="https://www.youtube.com/@RollingScopesSchool">You</a>
+      <div class="footer-icon icon-school"><a class="footer-icon-link" target="_blank" href="https://rs.school/js/"></a></div>
+      <div class="footer-icon icon-github"><a class="footer-icon-link" target="_blank" href="https://github.com/Antonowka"></a></div>
+      <div class="footer-icon icon-github"><a class="footer-icon-link" target="_blank" href="https://github.com/max7394"></a></div>
+      <div class="footer-icon icon-github"><a class="footer-icon-link" target="_blank" href="https://github.com/Sergey-Lesnevskiy"></a></div>
+      <div class="footer-icon icon-youtube"><a class="footer-icon-link" target="_blank" href="https://www.youtube.com/@RollingScopesSchool"></a>
       </div>
     </div>
     <p class="copyright"> © Copyright 2022

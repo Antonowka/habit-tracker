@@ -15,6 +15,7 @@ all everything that is used more than once in the project
   --sticker-hover-fonts: #747474;
   --moon-hover: #b1b1b1;
   --sun-hover: #fffc2e;
+  --copyright-fonts-color: #bbb;
 
   /* Table roots */
   --table-border: #9b9b9ba8;
@@ -45,4 +46,5 @@ body.dark{
   transition: all 0.4s ease;
   --habit-shadow: #f3f3f3;
   --table-border: #ffffff70;
+  --copyright-fonts-color: #444;
 }
