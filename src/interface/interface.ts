@@ -19,3 +19,19 @@ export interface IHabit {
     goal: number;
     date: string[];
 }
+
+export interface INote {
+    text: string;
+    date: string;
+    color: string;
+    posLeft: number;
+    posTop: number;
+    zIndex: number;
+    degRotate: number;
+}
+
+export type MyNotesList = [INote];
+
+export interface INotes {
+    notes: Array<data>;
+}
