@@ -5,6 +5,7 @@
   box-shadow: 0 0 5px var(--habit-shadow);
   color: var(--main-font-color);
   user-select: none;
+  transition: box-shadow .2s ease;
 }
 
 .sticky-note:hover {
