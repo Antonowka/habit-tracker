@@ -1,14 +1,16 @@
 .sticky-note {
   position: absolute;
-  height: 200px;
+  max-height: 210px;
   width: 200px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  /* z-index: 200; */
+  box-shadow: 0 0 5px var(--habit-shadow);
   color: var(--main-font-color);
+  user-select: none;
+  transition: box-shadow .2s ease;
+  overflow: hidden;
 }
 
 .sticky-note:hover {
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px var(--habit-shadow);
 }
 
 .modal-add-note {
@@ -27,6 +29,53 @@
   border-radius: var(--border-radius);
 }
 
+@media (max-width: 1200px){
+  .modal-add-note {
+    width: 400px;
+    min-height: auto;
+  }
+  .modal-header{
+    font-size: 1.8rem;
+  }
+  .btn-modal-close{
+    font-size: 1.3rem;
+  }
+  .modal-note-input{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 810px){
+  .modal-add-note {
+    width: 350px;
+    min-height: auto;
+  }
+  .modal-header{
+    font-size: 1.5rem;
+  }
+  .btn-modal-close{
+    font-size: 1.1rem;
+    top: 18px;
+  }
+}
+
+@media (max-width: 560px){
+  .modal-add-note {
+    width: 300px;
+    min-height: auto;
+  }
+  .modal-header{
+    font-size: 1.2rem;
+  }
+  .btn-modal-close{
+    font-size: 1rem;
+    top: 15px;
+  }
+  .modal-note-input{
+    font-size: 14px;
+  }
+}
+
 .modal-note-input {
   font-size: 18px;
   height: 180px;
@@ -36,6 +85,7 @@
   margin-top: 20px;
   width: 100%;
   resize: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-modal-note-save {
@@ -48,26 +98,36 @@
   border: none;
   border-radius: var(--border-radius);
   margin-top: 20px;
+  transition: .2s;
 }
 
 .note-header{
-  height: 40px;
+  height: 34px;
   background-color: rgba(0,0,0,0.2);
-  cursor: move;
+  font-family: 'Julee', cursive;
+  cursor: grab;
+}
+
+.note-header:active{
+  cursor: grabbing;
 }
 
 .note-header > span {
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 10px;
   font-weight: bold;
   font-size: 1.1rem;
-  color: #444;
+  color: var(--sticker-fonts);
 }
 
 .note-body {
   padding: 10px;
-  color: #444;
+  color: var(--sticker-fonts);
+  font-family: 'Julee', cursive;
+  font-size: 20px;
+  word-break: break-all;
+  
 }
 
 .btn-note-close,
@@ -78,25 +138,26 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  color: #444;
+  font-size: 1.2rem;
+  color: var(--sticker-fonts);
+  transition: .2s;
 }
 
 .btn-note-edit:hover {
-  transform: rotate(135deg) scale(1.2);
+  color: var(--sticker-hover-fonts);
 }
 
 .btn-note-close:hover {
-  transform: scale(1.2);
+  color: var(--delete-but-hover);
 }
 
 .btn-note-close {
-  top: 5px;
-  right: 10px;
+  top: 6px;
+  right: 7px;
 }
 
 .btn-note-edit {
-  top: 10px;
+  top: 8px;
   right: 25px;
   vertical-align: center;
   transform: rotate(135deg);

@@ -27,6 +27,33 @@
   border-radius: var(--border-radius);
 }
 
+@media (max-width: 1200px){
+  .modal-add-habit {
+    width: 400px;
+    min-height: auto;
+  }
+  .modal-note-input{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 810px){
+  .modal-add-habit {
+    width: 350px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px){
+  .modal-add-habit {
+    width: 300px;
+    min-height: auto;
+  }
+  .modal-note-input{
+    font-size: 14px;
+  }
+}
+
 @keyframes show {
   from { opacity: 0 }
   to { opacity: 1 }
@@ -43,12 +70,11 @@
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--main-font-color);
+  transition: .2s;
 }
 
-@media (max-width: 1200px){
-  .btn-new-habit {
-    margin-top: 30px;
-  }
+.btn-modal-close:hover {
+  color: var(--delete-but-hover);
 }
 
 .btn-modal-save,
@@ -56,36 +82,74 @@
 .btn-edit-del,
 .btn-new-habit,
 .btn-new-note {
-  min-width: 70px;
+  width: 100px;
   height: 40px;
   background: var(--main-font-color);
   color: var(--main-color);
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: var(--border-radius);
   transition: .2s;
 }
 
+.btn-modal-save{
+  width: 100%;
+}
+
+.btn-new-habit,
+.btn-new-note {
+  margin: 30px 0;
+}
+
+@media (max-width: 1200px){
+  .btn-new-habit,
+  .btn-new-note {
+    margin: 30px 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 810px){
+  .btn-new-habit,
+  .btn-new-note {
+    width: 80px;
+    height: 30px;
+    padding: 0;
+  }
+}
+
+
 .btn-edit-del {
   background: var(--main-red);
   color: var(--main-font-color);
 }
 
-.btn-new-habit,
 .btn-new-note {
-  margin-top: 30px;
-  margin-left: 30px;
+  position: absolute;
+  right: 20px;
 }
 
-.btn-edit-del:hover {
+@media (max-width: 1200px){
+  .btn-new-note {
+    margin-top: 30px;
+    right: 0;
+  }
+}
+
+.btn-edit-del:hover{
   background: var(--delete-but-hover);
 }
 
 .btn-new-habit:hover,
+.btn-new-note:hover {
+  background: var(--hover-header);
+}
+
+.btn-modal-note-save:hover,
 .btn-modal-save:hover,
-.btn-edit-save:hover {
-  background: var(--hover-footer);
+.btn-edit-save:hover{
+  background: var(--habit-achieved);
 }
 
 .modal-header {
@@ -105,6 +169,25 @@
   border-radius: var(--border-radius);
   border: 1px solid var(--main-font-color);
   padding-left: 10px;
+}
+
+@media (max-width: 1200px){
+  .modal-name-input, 
+  .modal-goal-input{
+    font-size: 17px;
+  }
+}
+@media (max-width: 810px){
+  .modal-name-input, 
+  .modal-goal-input{
+    font-size: 16px;
+  }
+}
+@media (max-width: 560px){
+  .modal-name-input, 
+  .modal-goal-input{
+    font-size: 14px;
+  }
 }
 
 tr[class^="row-"] {
@@ -152,33 +235,49 @@ tr[class^="row-"] .td-colored {
   color: var(--main-font-color);
 }
 
-tr[class^="row-"]:nth-child(7n+1) .td-colored,
-tr[class^="row-"]:nth-child(7n+1) .td-habit { 
+tr[class^="row-"]:nth-child(11n+1) .td-colored,
+tr[class^="row-"]:nth-child(11n+1) .td-habit { 
   background: var(--habit-7);
 }
-tr[class^="row-"]:nth-child(7n+2) .td-colored,
-tr[class^="row-"]:nth-child(7n+2) .td-habit {
+tr[class^="row-"]:nth-child(11n+2) .td-colored,
+tr[class^="row-"]:nth-child(11n+2) .td-habit {
   background: var(--habit-1);
 }
-tr[class^="row-"]:nth-child(7n+3) .td-colored,
-tr[class^="row-"]:nth-child(7n+3) .td-habit {
+tr[class^="row-"]:nth-child(11n+3) .td-colored,
+tr[class^="row-"]:nth-child(11n+3) .td-habit {
   background: var(--habit-2);
 }
-tr[class^="row-"]:nth-child(7n+4) .td-colored,
-tr[class^="row-"]:nth-child(7n+4) .td-habit {
+tr[class^="row-"]:nth-child(11n+4) .td-colored,
+tr[class^="row-"]:nth-child(11n+4) .td-habit {
   background: var(--habit-3);
 }
-tr[class^="row-"]:nth-child(7n+5) .td-colored,
-tr[class^="row-"]:nth-child(7n+5) .td-habit {
+tr[class^="row-"]:nth-child(11n+5) .td-colored,
+tr[class^="row-"]:nth-child(11n+5) .td-habit {
   background: var(--habit-4);
 }
-tr[class^="row-"]:nth-child(7n+6) .td-colored,
-tr[class^="row-"]:nth-child(7n+6) .td-habit {
+tr[class^="row-"]:nth-child(11n+6) .td-colored,
+tr[class^="row-"]:nth-child(11n+6) .td-habit {
   background: var(--habit-5);
 }
-tr[class^="row-"]:nth-child(7n+7) .td-colored,
-tr[class^="row-"]:nth-child(7n+7) .td-habit {
+tr[class^="row-"]:nth-child(11n+7) .td-colored,
+tr[class^="row-"]:nth-child(11n+7) .td-habit {
   background: var(--habit-6); 
+}
+tr[class^="row-"]:nth-child(11n+8) .td-colored,
+tr[class^="row-"]:nth-child(11n+8) .td-habit {
+  background: var(--habit-8); 
+}
+tr[class^="row-"]:nth-child(11n+9) .td-colored,
+tr[class^="row-"]:nth-child(11n+9) .td-habit {
+  background: var(--habit-9); 
+}
+tr[class^="row-"]:nth-child(11n+10) .td-colored,
+tr[class^="row-"]:nth-child(11n+10) .td-habit {
+  background: var(--habit-10); 
+}
+tr[class^="row-"]:nth-child(11n+11) .td-colored,
+tr[class^="row-"]:nth-child(11n+11) .td-habit {
+  background: var(--habit-11); 
 }
 
 td[class^="td-"] {

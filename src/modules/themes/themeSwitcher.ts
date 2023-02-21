@@ -5,6 +5,7 @@ export function switchTheme() {
     const getMode: string | null = localStorage.getItem('mode');
     if (getMode && getMode === 'dark-mode') {
         body.classList.add('dark');
+        modeToggle.classList.toggle('active');
     }
 
     // js code to toggle dark and light mode

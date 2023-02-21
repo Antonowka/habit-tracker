@@ -11,30 +11,43 @@ all everything that is used more than once in the project
   --hover-footer: #adadad;
   --hover-header: #6e8dff;
   --border-radius: 8px;
+  --sticker-fonts: #444;
+  --sticker-hover-fonts: #747474;
+  --moon-hover: #b1b1b1;
+  --sun-hover: #fffc2e;
+  --copyright-fonts-color: #bbb;
+  --header-fonts: #444;
+  --footer-fonts: #444;
 
   /* Table roots */
   --table-border: #9b9b9ba8;
   --current-day: #6e8dff;
   --current-day-circle: #3232321c;
-  --habit-1: #a3a8e18c;
+  --habit-1: #afb3e78c;
   --habit-2: #a3e1b0d1;
   --habit-3: #e0e1a3c4;
-  --habit-4: #e1a3dfbd;
+  --habit-4: #ebb1e9bd;
   --habit-5: #a3dfe1cc;
   --habit-6: #dfdfdfe0; 
-  --habit-7: #e1a3a3ad;
+  --habit-7: #f79696ad;
+  --habit-8: #f3bd9ead;
+  --habit-9: #b6e1a3ad;
+  --habit-10: #a3c8e1ad;
+  --habit-11: #7ca6e4ad;
   --habit-achieved: #4eb53edb;
   --habit-hover: #fafafa;
   --habit-shadow: #35363A;
-  --delete-but-hover: #ff2626bf;
+  --delete-but-hover: #ff2828bf;
 }
 
 body.dark{
   --main-color: #35363A;
   --nav-color: #202124;
-  --main-font-color: #f3f3f3;
+  --main-font-color: #e4e4e4;
   --main-red: #ff8a8abf;
   transition: all 0.4s ease;
   --habit-shadow: #f3f3f3;
   --table-border: #ffffff70;
+  --copyright-fonts-color: #444;
+  --footer-fonts: #adadad;
 }

@@ -11,13 +11,12 @@ import {
 import { updateUserToBD } from '../auth/api';
 
 export function UPDATE() {
-    const body = JSON.parse(returnTokenBody() || '');
-    const notes = JSON.parse(returnTokenNotes() || '');
+    const body = JSON.parse(returnTokenBody() || '[]');
+    const notes = JSON.parse(returnTokenNotes() || '[]');
     const email = returnTokenEmail();
     const tokenID = returnToken();
     // const data = JSON.parse(returnTokenBodyBD() || '');
     // const user = JSON.stringify(data.user);
-    console.log(notes);
     if (body && email && tokenID) {
         updateUserToBD(body, email, tokenID, notes).then(() => {
             const email = returnTokenEmail();

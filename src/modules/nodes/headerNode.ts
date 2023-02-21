@@ -11,11 +11,13 @@ export const nodsHeader = () => {
     }
     const renderHeader = `
       <div class="nav-bar">
-        <span class="logo">Habit Tracker</span>
-  
+          <div class="logo">
+            <div class="logo-img"></div>Habit Tracker
+          </div>
+
         <div class="menu">
           <ul class="nav-links">
-            <li><a href="#">How it works</a></li>
+            <li class="nav-link"><span class="how-work">How it works</span></li>
           </ul>
         </div>
   

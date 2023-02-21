@@ -1,7 +1,8 @@
 .footer-links {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
   margin: 20px 0;
 }
 
@@ -14,6 +15,15 @@
   }
 }
 
+@media (max-width: 360px){
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+}
+
 .footer_icon,
 .footer_icon_link {
   color: var(--main-font-color);
@@ -22,37 +32,149 @@
   justify-content: center;
   align-items: center;
   transition: 0.2s;
-  padding: 18px;
+}
 
+.footer-icon-link{
+  padding: 20px;
+}
+
+@media (max-width: 810px){
+  .footer-icon-link{
+    padding: 17px;
+  }
+}
+
+@media (max-width: 560px){
+  .footer-icon-link{
+    padding: 15px;
+  }
 }
 
 .footer-icon-link{
   color: var(--main-font-color);
 }
 
-.icon-school,
-.icon-github,
+.icon-school{
+  cursor: pointer;
+  background: url(../assets/images/rss.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+}
+.icon-school:hover{
+  background: url(../assets/images/rss-hover.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 50px;
+}
+
+.icon-github{
+  cursor: pointer;
+  background: url(../assets/images/git.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+}
+.icon-github:hover{
+  background: url(../assets/images/git-hover.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 50px;
+}
+
 .icon-youtube{
   cursor: pointer;
+  background: url(../assets/images/youtube.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 40px;
   height: 40px;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  border: 3px solid var(--main-font-color);
-  transition: all .2s ease;
+  transition: all .3s ease;
+}
+.icon-youtube:hover{
+  background: url(../assets/images/youtube-hover.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
 }
 
-.footer-icon:hover > * {
-  color: var(--hover-footer);
+@media (max-width: 810px){
+  .icon-school,
+  .icon-github{
+    width: 33px;
+    height: 35px;
+  }
+  .icon-school:hover,
+  .icon-github:hover{
+    width: 36px;
+    height: 38px;
+  }
 }
 
-.icon-school:hover,
+@media (max-width: 560px){
+  .icon-school,
+  .icon-github{
+    width: 28px;
+    height: 30px;
+  }
+  .icon-school:hover,
+  .icon-github:hover{
+    width: 31px;
+    height: 33px;
+  }
+}
+
+
+@media (max-width: 810px){
+  .icon-youtube {
+    width: 35px;
+    height: 35px;
+  }
+  .icon-youtube:hover {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 560px){
+  .icon-youtube {
+    width: 30px;
+    height: 30px;
+  }
+  .icon-youtube:hover {
+    width: 33px;
+    height: 33px;
+  }
+}
+
 .icon-github:hover,
-.icon-youtube:hover {
-  border-color: var(--hover-footer);
+.icon-youtube:hover,
+.icon-school:hover {
   transform: scale(1.1);
 }
 
@@ -63,18 +185,18 @@
 }
 
 .copyright {
-  color: var(--main-font-color);
+  color: var(--copyright-fonts-color);
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   padding-bottom: 10px;
 }
 
 .copyright-link {
   font-size: 18px;
-  color: var(--main-font-color);
+  color: var(--footer-fonts);
   transition: 0.2s;
 }
 
 .copyright-link:hover {
-  color: var(--hover-footer);
+  color: var(--hover-header);
 }

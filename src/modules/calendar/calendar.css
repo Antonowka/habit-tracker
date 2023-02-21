@@ -5,6 +5,13 @@
 .calendar-wrapper {
     padding: 0 20px;
     transition: all 0.4s ease;
+    position: relative;
+}
+
+@media (max-width: 1200px){
+  .calendar-wrapper {
+    padding: 0;
+  }
 }
 
 .calendar {
@@ -15,26 +22,25 @@
 @media (max-width: 1200px){
   .calendar {
     overflow-x: scroll;
-    width: calc(100vw - 100px);
+    width: calc(100vw - 40px);
     scrollbar-width: thin;
     scrollbar-color: green black;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
   height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--main-font-color);
+  background-color: var(--hover-header);
   border-radius: var(--border-radius);
 }
 
 ::-webkit-scrollbar-track{
   background-color: var(--main-color);
   border-radius: var(--border-radius);
-  box-shadow: 0 0 2px var(--main-font-color);
+  border: 1px solid var(--main-font-color);
 }
 
 @media (max-width: 810px){
@@ -54,27 +60,63 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--main-font-color);
-  padding: 15px 0 15px 15px;
+  color: var(--header-fonts);
+  padding: 25px 0 25px 15px;
   border: none;
   cursor: pointer;
   font-size: 24px;
   transition: .3s;
 }
+
 .drop-menu:hover {
   color: var(--hover-header);
+}
+
+@media (max-width: 768px){
+  .drop-menu {
+    font-size: 20px;
+    gap: 5px;
+    padding: 25px 0 25px 5px;
+  }
+}
+
+@media (max-width: 640px){
+  .drop-menu {
+    font-size: 20px;
+    gap: 5px;
+    padding: 25px 0 25px 5px;
+  }
+}
+
+@media (max-width: 480px){
+  .drop-menu {
+    font-size: 16px;
+    gap: 5px;
+    padding: 25px 0 25px 5px;
+  }
 }
 
 .dropdown-content {
   opacity: 0;
   width: 150px;
   position: absolute;
-  top: 0;
+  top: -100px;
   z-index: 1;
   transition: all .3s ease;
   background: var(--nav-color);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
+}
+
+@media (max-width: 768px){
+  .dropdown-content {
+    width: 130px;
+  }
+}
+@media (max-width: 560px){
+  .dropdown-content {
+    width: 110px;
+  }
 }
 
 .logout-btn {
@@ -97,12 +139,24 @@
 
 .logout-wrapper:hover .dropdown-content {
   opacity: 1;
-  top: 70px;
+  top: 90px;
+}
+
+@media (max-width: 560px){
+  .logout-wrapper:hover .dropdown-content {
+    top: 80px;
+  }
 }
 
 .drop-menu-icon {
   font-size: 16px;
   transition: .3s;
+}
+
+@media (max-width: 768px){
+  .drop-menu-icon {
+    font-size: 14px;
+  }
 }
 
 .logout-wrapper:hover .drop-menu-icon {
@@ -141,8 +195,14 @@
     color: var(--table-border);
 }
 
+@media (max-width: 1200px){
+  .button {
+    font-size: 20px;
+  }
+}
+
 .button:hover {
-    color: var(--main-font-color);
+    color: var(--hover-header);
 }
 
 .table {
@@ -267,6 +327,22 @@
     align-items: center;
     gap: 30px;
     margin-top: 100px;
+}
+
+@media (max-width: 1200px){
+  .header-calendar {
+    gap: 20px;
+  }
+}
+@media (max-width: 810px){
+  .header-calendar {
+    gap: 15px;
+  }
+}
+@media (max-width: 560px){
+  .header-calendar {
+    gap: 10px;
+  }
 }
 
 .current-day{
