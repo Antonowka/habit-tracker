@@ -7,6 +7,7 @@
   user-select: none;
   transition: box-shadow .2s ease;
   overflow: hidden;
+  touch-action: none;
 }
 
 .sticky-note:hover {
