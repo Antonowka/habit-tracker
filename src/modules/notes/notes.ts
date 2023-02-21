@@ -114,9 +114,9 @@ export function createNotes() {
         document.body.append(newDivNote);
 
         //*********Move Notes
-        newDivNoteHeader.onmousedown = function (e: Event) {
-            const shiftX = (e as MouseEvent).clientX - newDivNote.getBoundingClientRect().left;
-            const shiftY = (e as MouseEvent).clientY - newDivNote.getBoundingClientRect().top;
+        newDivNoteHeader.onpointerdown = function (e: Event) {
+            const shiftX = (e as PointerEvent).clientX - newDivNote.getBoundingClientRect().left;
+            const shiftY = (e as PointerEvent).clientY - newDivNote.getBoundingClientRect().top;
 
             //*****Change Z-index
             const noteIdNumber = Number(newDivNote.id.slice(5));
@@ -132,34 +132,34 @@ export function createNotes() {
             UPDATE();
             //*****Change Z-index
 
-            moveAt((e as MouseEvent).pageX, (e as MouseEvent).pageY);
+            moveAt((e as PointerEvent).pageX, (e as PointerEvent).pageY);
 
             function moveAt(pageX: number, pageY: number) {
                 newDivNote.style.left = pageX - shiftX + 'px';
                 newDivNote.style.top = pageY - shiftY + 'px';
             }
 
-            function onMouseMove(e: Event) {
-                moveAt((e as MouseEvent).pageX, (e as MouseEvent).pageY);
+            function onPointerMove(e: Event) {
+                moveAt((e as PointerEvent).pageX, (e as PointerEvent).pageY);
             }
 
-            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('pointermove', onPointerMove);
 
-            newDivNote.onmouseup = function () {
-                document.removeEventListener('mousemove', onMouseMove);
-                newDivNote.onmouseup = null;
+            newDivNote.onpointerup = function () {
+                document.removeEventListener('pointermove', onPointerMove);
+                newDivNote.onpointerup = null;
             };
 
             newDivNote.ondragstart = function () {
                 return false;
             };
 
-            document.addEventListener('mouseup', onMouseUp);
+            document.addEventListener('pointerup', onPointerUp);
 
-            function onMouseUp() {
+            function onPointerUp() {
                 adjustStickCoords();
-                document.removeEventListener('mousemove', onMouseMove);
-                document.removeEventListener('mouseup', onMouseUp);
+                document.removeEventListener('pointermove', onPointerMove);
+                document.removeEventListener('pointerup', onPointerUp);
 
                 //****Update DB
                 const noteIdNumber = Number(newDivNote.id.slice(5));
