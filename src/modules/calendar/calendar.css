@@ -139,10 +139,10 @@
 
 .logout-wrapper:hover .dropdown-content {
   opacity: 1;
-  top: 70px;
+  top: 90px;
 }
 
-@media (max-width: 640px){
+@media (max-width: 560px){
   .logout-wrapper:hover .dropdown-content {
     top: 80px;
   }
