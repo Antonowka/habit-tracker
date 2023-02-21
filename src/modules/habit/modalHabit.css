@@ -93,6 +93,8 @@
   transition: .2s;
 }
 
+.btn-edit-del,
+.btn-edit-save,
 .btn-modal-save{
   width: 100%;
 }
