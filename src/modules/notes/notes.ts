@@ -64,8 +64,8 @@ function fillDBNotes() {
         text: String(inputNote),
         date: String(currDate),
         color: colorsNotes[getRndInteger(0, 4)],
-        posLeft: 0,
-        posTop: 0,
+        posLeft: document.documentElement.scrollWidth / 2 - 100,
+        posTop: document.documentElement.scrollHeight / 2,
         zIndex: 200,
         degRotate: getRndInteger(-3, 3),
     });
