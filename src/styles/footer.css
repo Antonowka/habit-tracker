@@ -15,6 +15,15 @@
   }
 }
 
+@media (max-width: 360px){
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+}
+
 .footer_icon,
 .footer_icon_link {
   color: var(--main-font-color);
@@ -27,6 +36,18 @@
 
 .footer-icon-link{
   padding: 20px;
+}
+
+@media (max-width: 810px){
+  .footer-icon-link{
+    padding: 17px;
+  }
+}
+
+@media (max-width: 560px){
+  .footer-icon-link{
+    padding: 15px;
+  }
 }
 
 .footer-icon-link{
@@ -100,6 +121,55 @@
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
+}
+
+@media (max-width: 810px){
+  .icon-school,
+  .icon-github{
+    width: 33px;
+    height: 35px;
+  }
+  .icon-school:hover,
+  .icon-github:hover{
+    width: 36px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 560px){
+  .icon-school,
+  .icon-github{
+    width: 28px;
+    height: 30px;
+  }
+  .icon-school:hover,
+  .icon-github:hover{
+    width: 31px;
+    height: 33px;
+  }
+}
+
+
+@media (max-width: 810px){
+  .icon-youtube {
+    width: 35px;
+    height: 35px;
+  }
+  .icon-youtube:hover {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 560px){
+  .icon-youtube {
+    width: 30px;
+    height: 30px;
+  }
+  .icon-youtube:hover {
+    width: 33px;
+    height: 33px;
+  }
 }
 
 .icon-github:hover,

@@ -29,6 +29,53 @@
   border-radius: var(--border-radius);
 }
 
+@media (max-width: 1200px){
+  .modal-add-note {
+    width: 400px;
+    min-height: auto;
+  }
+  .modal-header{
+    font-size: 1.8rem;
+  }
+  .btn-modal-close{
+    font-size: 1.3rem;
+  }
+  .modal-note-input{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 810px){
+  .modal-add-note {
+    width: 350px;
+    min-height: auto;
+  }
+  .modal-header{
+    font-size: 1.5rem;
+  }
+  .btn-modal-close{
+    font-size: 1.1rem;
+    top: 18px;
+  }
+}
+
+@media (max-width: 560px){
+  .modal-add-note {
+    width: 300px;
+    min-height: auto;
+  }
+  .modal-header{
+    font-size: 1.2rem;
+  }
+  .btn-modal-close{
+    font-size: 1rem;
+    top: 15px;
+  }
+  .modal-note-input{
+    font-size: 14px;
+  }
+}
+
 .modal-note-input {
   font-size: 18px;
   height: 180px;

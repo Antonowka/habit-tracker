@@ -32,7 +32,7 @@ label {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 400px;
+    width: 450px;
     transform: translate(-50%, -50%);
     border: 1px solid var(--table-border);
     border-radius: var(--border-radius);
@@ -45,6 +45,22 @@ label {
     position: absolute;
     top: 30px;
     right: 20px;
+}
+
+@media (max-width: 1200px){
+  .authorizationConteiner{
+    width: 400px;
+  }
+}
+@media (max-width: 810px){
+  .authorizationConteiner{
+    width: 350px;
+  }
+}
+@media (max-width: 560px){
+  .authorizationConteiner{
+    width: 300px;
+  }
 }
 
 .wrapperButtonChange {
@@ -63,13 +79,33 @@ label {
     background-color: cadetblue;
 }
 
-.registration {
-    max-width: 200px;
+.registration ,
+.createButton{
+    width: 200px;
     cursor: pointer;
 }
 
-.createButton {
-    width: 350px;
+
+@media (max-width: 1200px){
+  .registration,
+  .createButton{
+    width: 170px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 810px){
+  .registration,
+  .createButton{
+    width: 140px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 560px){
+  .registration,
+  .createButton{
+    width: 125px;
+    font-size: 16px;
+  }
 }
 
 .registration:active {

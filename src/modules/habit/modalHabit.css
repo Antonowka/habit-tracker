@@ -27,6 +27,33 @@
   border-radius: var(--border-radius);
 }
 
+@media (max-width: 1200px){
+  .modal-add-habit {
+    width: 400px;
+    min-height: auto;
+  }
+  .modal-note-input{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 810px){
+  .modal-add-habit {
+    width: 350px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px){
+  .modal-add-habit {
+    width: 300px;
+    min-height: auto;
+  }
+  .modal-note-input{
+    font-size: 14px;
+  }
+}
+
 @keyframes show {
   from { opacity: 0 }
   to { opacity: 1 }
@@ -50,27 +77,48 @@
   color: var(--delete-but-hover);
 }
 
-@media (max-width: 1200px){
-  .btn-new-habit {
-    margin-top: 30px;
-  }
-}
-
 .btn-modal-save,
 .btn-edit-save,
 .btn-edit-del,
 .btn-new-habit,
 .btn-new-note {
-  min-width: 70px;
+  width: 100px;
   height: 40px;
   background: var(--main-font-color);
   color: var(--main-color);
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: var(--border-radius);
   transition: .2s;
 }
+
+.btn-modal-save{
+  width: 100%;
+}
+
+.btn-new-habit,
+.btn-new-note {
+  margin: 30px 0;
+}
+
+@media (max-width: 1200px){
+  .btn-new-habit,
+  .btn-new-note {
+    margin: 30px 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 810px){
+  .btn-new-habit,
+  .btn-new-note {
+    width: 80px;
+    height: 30px;
+    padding: 0;
+  }
+}
+
 
 .btn-edit-del {
   background: var(--main-red);
@@ -85,6 +133,7 @@
 @media (max-width: 1200px){
   .btn-new-note {
     margin-top: 30px;
+    right: 0;
   }
 }
 
@@ -120,6 +169,25 @@
   border-radius: var(--border-radius);
   border: 1px solid var(--main-font-color);
   padding-left: 10px;
+}
+
+@media (max-width: 1200px){
+  .modal-name-input, 
+  .modal-goal-input{
+    font-size: 17px;
+  }
+}
+@media (max-width: 810px){
+  .modal-name-input, 
+  .modal-goal-input{
+    font-size: 16px;
+  }
+}
+@media (max-width: 560px){
+  .modal-name-input, 
+  .modal-goal-input{
+    font-size: 14px;
+  }
 }
 
 tr[class^="row-"] {
