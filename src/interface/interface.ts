@@ -6,6 +6,8 @@ export interface data {
 
 export type MyHabitsList = [data];
 
+export type test = [];
+
 export interface habits {
     habits: Array<data>;
 }
