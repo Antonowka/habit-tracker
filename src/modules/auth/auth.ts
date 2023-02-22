@@ -3,9 +3,9 @@ import { authorizationButtonsChangeForm, authorizationPage, hidePage } from './p
 import { authentificationEmailWithPassword, authorization, loginBD, readAllUsersToBD, writeUserToBD } from './api';
 import { validation } from './validation';
 import { returnToken, returnTokenEmail, saveTokenAndName } from './token';
-import { createBody, createNote } from './body';
 import { renderMainPage } from '../render/render';
 import { SAVE_DATA_BD } from '../dataChangeLocal/dataChange';
+import { createNote } from './body';
 
 const BODY = document.querySelector('body') as HTMLElement;
 
@@ -64,7 +64,7 @@ function registrationChangeFunction() {
     registrationButton.addEventListener('click', () => {
         authorizationButton.classList.add('hideAuth');
         inputLogin.forEach((item) => item.classList.add('hideAuth'));
-        authentificationButton.classList.remove('hihideAuthe');
+        authentificationButton.classList.remove('hideAuth');
         registrationButton.classList.add('activeAuth');
         createButton.classList.remove('activeAuth');
     });
@@ -79,7 +79,6 @@ function registrationChangeFunction() {
 
 function authorizationChangeButton() {
     const authorizationButton = document.getElementById('authorizationButton') as HTMLButtonElement;
-    const themes = 'light';
     authorizationButton.addEventListener('click', (e) => {
         const email: string | null = (document.getElementById('email') as HTMLInputElement).value;
         const password: string | null = (document.getElementById('password') as HTMLInputElement).value;
@@ -93,13 +92,14 @@ function authorizationChangeButton() {
         }
         if (email && password) {
             authorization(email, password)
-                .then(() => writeUserToBD(createBody(), email, login, createNote(), themes))
+                .then(() => writeUserToBD([], email, login, createNote(), 'light'))
                 .then((id) => {
                     if (id) {
                         saveTokenAndName('IDForFined', id);
                         readAllUsersToBD(email);
                         hidePage();
                         renderMainPage();
+                        history.go(0);
                     }
                 });
         }

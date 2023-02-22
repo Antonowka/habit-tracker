@@ -1,11 +1,13 @@
 import { returnThemes } from '../auth/token';
 import { UPDATE } from '../dataChangeLocal/dataChange';
 
-export function switchTheme() {
+// async function returnTheme() {
+//     return getMode;
+//}/
+export async function switchTheme() {
     const body: HTMLElement = document.querySelector('body') as HTMLElement;
     const modeToggle: HTMLElement = document.querySelector('.dark-light') as HTMLElement;
-
-    const getMode: string | null = JSON.parse(returnThemes() || '');
+    const getMode = returnThemes();
     if (getMode && getMode === 'dark') {
         body.classList.add('dark');
         modeToggle.classList.toggle('active');

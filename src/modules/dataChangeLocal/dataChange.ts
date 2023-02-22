@@ -35,5 +35,5 @@ export function SAVE_DATA_BD() {
     const body = JSON.parse(returnTokenBodyBD() || '');
     saveTokenAndName('RS-habit', JSON.stringify(body.habits));
     saveTokenAndName('RS-notes', JSON.stringify(body.notes));
-    saveTokenAndName('mode', JSON.stringify(body.themes));
+    saveTokenAndName('mode', JSON.stringify(body.themes).replace(/[^\p{L}\d]/gu, ''));
 }

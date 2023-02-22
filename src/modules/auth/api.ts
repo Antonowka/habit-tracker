@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, collection, addDoc, updateDoc, doc, getDocs } from 'firebase/firestore';
-import { habits, INotes, MyHabitsList, MyNotesList } from '../../interface/interface';
+import { habits, INotes, MyNotesList, test } from '../../interface/interface';
 import { showError } from './error';
 import { saveTokenAndName } from './token';
 
@@ -64,13 +64,7 @@ export function loginBD(login: string) {
 }
 
 //первый раз
-export async function writeUserToBD(
-    habits: MyHabitsList,
-    login: string,
-    user: string,
-    notes: MyNotesList,
-    themes: string
-) {
+export async function writeUserToBD(habits: test, login: string, user: string, notes: MyNotesList, themes: string) {
     const colections = collection(dataBase, login);
     try {
         const docRef = await addDoc(colections, { habits, user, notes, themes });
