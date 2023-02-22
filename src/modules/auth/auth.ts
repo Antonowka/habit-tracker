@@ -79,6 +79,7 @@ function registrationChangeFunction() {
 
 function authorizationChangeButton() {
     const authorizationButton = document.getElementById('authorizationButton') as HTMLButtonElement;
+    const themes = 'light';
     authorizationButton.addEventListener('click', (e) => {
         const email: string | null = (document.getElementById('email') as HTMLInputElement).value;
         const password: string | null = (document.getElementById('password') as HTMLInputElement).value;
@@ -92,7 +93,7 @@ function authorizationChangeButton() {
         }
         if (email && password) {
             authorization(email, password)
-                .then(() => writeUserToBD(createBody(), email, login, createNote()))
+                .then(() => writeUserToBD(createBody(), email, login, createNote(), themes))
                 .then((id) => {
                     if (id) {
                         saveTokenAndName('IDForFined', id);

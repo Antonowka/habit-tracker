@@ -1,9 +1,12 @@
+import { returnThemes } from '../auth/token';
+import { UPDATE } from '../dataChangeLocal/dataChange';
+
 export function switchTheme() {
     const body: HTMLElement = document.querySelector('body') as HTMLElement;
     const modeToggle: HTMLElement = document.querySelector('.dark-light') as HTMLElement;
 
-    const getMode: string | null = localStorage.getItem('mode');
-    if (getMode && getMode === 'dark-mode') {
+    const getMode: string | null = JSON.parse(returnThemes() || '');
+    if (getMode && getMode === 'dark') {
         body.classList.add('dark');
         modeToggle.classList.toggle('active');
     }
@@ -15,9 +18,11 @@ export function switchTheme() {
 
         // js code to keep user selected mode even page refresh or file reopen
         if (!body.classList.contains('dark')) {
-            localStorage.setItem('mode', 'light-mode');
+            localStorage.setItem('mode', 'light');
+            UPDATE();
         } else {
-            localStorage.setItem('mode', 'dark-mode');
+            localStorage.setItem('mode', 'dark');
+            UPDATE();
         }
     });
 }
