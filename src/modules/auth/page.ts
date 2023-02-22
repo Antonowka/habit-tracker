@@ -19,7 +19,7 @@ export function authorizationPage() {
     auth.innerHTML = ` 
   <form class="auth__form">
   <label for="login" class="hideAuth login">Login</label>
-  <input type="text" class="hideAuth login" id="login" placeholder="Login">
+  <input type="text" class="hideAuth login" id="login" placeholder="Login" maxlength="16" minlength="3">
   <span id="errorLogin" class= "login error"></span>
   <label for="email">Email Address</label>
   <input type="email" id="email" placeholder="Email">
