@@ -20,7 +20,14 @@ export const nodsHeader = () => {
             <li class="nav-link"><span class="how-work">How it works</span></li>
           </ul>
         </div>
-  
+
+        <div class="how-work-modal">
+          <div class="how-work-wrapper">
+            <div class="modal-header-how">How it works?</div>
+            <button class="btn-modal-close">X</button>
+          </div>
+        </div>
+
         <div class="darkLight-searchBox">
           <div class="dark-light">
             <i class='bx bx-moon moon'></i>

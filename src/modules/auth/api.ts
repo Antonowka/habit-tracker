@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, collection, addDoc, updateDoc, doc, getDoc, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, updateDoc, doc, getDocs } from 'firebase/firestore';
 import { habits, INotes, MyHabitsList, MyNotesList } from '../../interface/interface';
 import { showError } from './error';
 import { saveTokenAndName } from './token';
