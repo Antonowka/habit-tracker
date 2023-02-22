@@ -64,36 +64,32 @@ export function loginBD(login: string) {
 }
 
 //первый раз
-export async function writeUserToBD(habits: MyHabitsList, login: string, user: string, notes: MyNotesList) {
+export async function writeUserToBD(
+    habits: MyHabitsList,
+    login: string,
+    user: string,
+    notes: MyNotesList,
+    themes: string
+) {
     const colections = collection(dataBase, login);
     try {
-        const docRef = await addDoc(colections, { habits, user, notes });
+        const docRef = await addDoc(colections, { habits, user, notes, themes });
         return docRef.id;
     } catch (e) {
         console.error('Error adding document: ', e);
     }
 }
 
-export async function updateUserToBD(habits: habits, login: string, token: string, notes: INotes) {
+export async function updateUserToBD(habits: habits, login: string, token: string, notes: INotes, themes: string) {
     const update = doc(dataBase, login, token);
     try {
-        const docRef = await updateDoc(update, { habits, notes });
+        const docRef = await updateDoc(update, { habits, notes, themes });
         // console.log('Document written with ID: ', docRef);
         return docRef;
     } catch (e) {
         console.error('Error adding document: ', e);
     }
 }
-
-// export async function readOneUserToBD(login: string, token: string) {
-//     const docRef = doc(dataBase, login, token);
-//     const docSnap = await getDoc(docRef);
-//     if (docSnap.exists()) {
-//         return docSnap.data();
-//     } else {
-//         console.log('No such document!');
-//     }
-// }
 
 export async function readAllUsersToBD(email: string) {
     const querySnapshot = await getDocs(collection(dataBase, email));
