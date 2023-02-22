@@ -4,7 +4,6 @@
 
 .calendar-wrapper {
     padding: 0 20px;
-    transition: all 0.4s ease;
     position: relative;
 }
 
@@ -16,7 +15,6 @@
 
 .calendar {
     margin: 0 auto;
-    transition: all .4s ease;
 }
 
 @media (max-width: 1200px){
@@ -171,6 +169,7 @@
 .header-calendar {
     margin-bottom: 20px;
     justify-content: center;
+    animation: 0.7s show ease;
 }
 
 .month {
@@ -207,6 +206,7 @@
 
 .table {
     margin: 30px 0;
+    animation: 0.7s show ease;
 }
 
 @media (max-width: 1200px){
