@@ -101,13 +101,13 @@
 
 .btn-new-habit,
 .btn-new-note {
-  margin: 30px 0;
+  margin: 30px 0 300px;
 }
 
 @media (max-width: 1200px){
   .btn-new-habit,
   .btn-new-note {
-    margin: 30px 0;
+    margin: 30px 0 300px;
     font-size: 14px;
   }
 }
@@ -115,9 +115,16 @@
 @media (max-width: 810px){
   .btn-new-habit,
   .btn-new-note {
+    margin: 30px 0 350px;
     width: 80px;
     height: 30px;
     padding: 0;
+  }
+}
+@media (max-width: 640px){
+  .btn-new-habit,
+  .btn-new-note {
+    margin: 30px 0 400px;
   }
 }
 
