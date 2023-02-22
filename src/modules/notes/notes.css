@@ -8,6 +8,7 @@
   transition: box-shadow .2s ease;
   overflow: hidden;
   touch-action: none;
+  animation: 0.5s show ease;
 }
 
 .sticky-note:hover {

@@ -59,11 +59,12 @@
   align-items: center;
   gap: 10px;
   color: var(--header-fonts);
-  padding: 25px 0 25px 15px;
+  margin: 25px 0 25px 15px;
   border: none;
   cursor: pointer;
   font-size: 24px;
   transition: .3s;
+  max-width: 150px;
 }
 
 .drop-menu:hover {
@@ -74,7 +75,7 @@
   .drop-menu {
     font-size: 20px;
     gap: 5px;
-    padding: 25px 0 25px 5px;
+    margin: 25px 0 25px 5px;
   }
 }
 
@@ -82,7 +83,7 @@
   .drop-menu {
     font-size: 20px;
     gap: 5px;
-    padding: 25px 0 25px 5px;
+    margin: 25px 0 25px 5px;
   }
 }
 
@@ -90,7 +91,9 @@
   .drop-menu {
     font-size: 16px;
     gap: 5px;
-    padding: 25px 0 25px 5px;
+    margin: 25px 0 25px 5px;
+    max-width: 100px;
+    word-break: break-all;
   }
 }
 
@@ -135,11 +138,21 @@
   background: var(--delete-but-hover);
 }
 
+.logout-wrapper{
+  display: flex;
+  justify-content: end;
+}
+
 .logout-wrapper:hover .dropdown-content {
   opacity: 1;
   top: 70px;
 }
 
+@media (max-width: 1200px){
+  .logout-wrapper:hover .dropdown-content {
+    right: 20px;
+  }
+}
 @media (max-width: 640px){
   .logout-wrapper:hover .dropdown-content {
     top: 80px;

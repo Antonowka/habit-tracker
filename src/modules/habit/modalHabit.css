@@ -221,7 +221,6 @@ tr[class^="row-"] .td-colored {
 .td-habit {
   color: var(--main-font-color);
   font-weight: 700;
-  transition: .3s;
   width: 140px;
   padding: 0 5px;
 }
@@ -287,6 +286,7 @@ td[class^="td-"] {
   border-right: 1px solid var(--table-border); /* design process */
   cursor: pointer;
   text-align: center;
+  transition: .5s;
 }
 
 td[class^="td-"]:nth-child(1) {
