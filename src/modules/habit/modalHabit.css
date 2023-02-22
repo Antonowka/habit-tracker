@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   background-color: rgba(15, 14, 14, 0.6);
   z-index: 10000;
   animation: 0.3s show ease;
