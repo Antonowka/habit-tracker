@@ -1,3 +1,14 @@
+.transparent-modal-how {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(15, 14, 14, 0.6);
+  z-index: 10000;
+  animation: 0.3s show ease;
+}
+
 .how-work-modal {
   position: absolute;
   z-index: -100;

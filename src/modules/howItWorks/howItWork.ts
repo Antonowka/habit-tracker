@@ -5,7 +5,7 @@ export function howItWorkButton() {
     const howItWorkModal = document.querySelector('.how-work-modal') as HTMLElement;
     const howItWorkModalBtnClose = document.querySelector('.btn-modal-close') as HTMLElement;
     const transparentModal = document.createElement('div') as HTMLElement;
-    transparentModal.className = 'transparent-modal';
+    transparentModal.className = 'transparent-modal-how';
 
     document.addEventListener('click', function (e) {
         if (e.target === howItWork) {

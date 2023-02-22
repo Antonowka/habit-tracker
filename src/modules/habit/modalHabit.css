@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   background-color: rgba(15, 14, 14, 0.6);
   z-index: 10000;
   animation: 0.3s show ease;
@@ -101,13 +101,13 @@
 
 .btn-new-habit,
 .btn-new-note {
-  margin: 30px 0;
+  margin: 30px 0 300px;
 }
 
 @media (max-width: 1200px){
   .btn-new-habit,
   .btn-new-note {
-    margin: 30px 0;
+    margin: 30px 0 300px;
     font-size: 14px;
   }
 }
@@ -115,9 +115,16 @@
 @media (max-width: 810px){
   .btn-new-habit,
   .btn-new-note {
+    margin: 30px 0 350px;
     width: 80px;
     height: 30px;
     padding: 0;
+  }
+}
+@media (max-width: 640px){
+  .btn-new-habit,
+  .btn-new-note {
+    margin: 30px 0 400px;
   }
 }
 
@@ -221,7 +228,6 @@ tr[class^="row-"] .td-colored {
 .td-habit {
   color: var(--main-font-color);
   font-weight: 700;
-  transition: .3s;
   width: 140px;
   padding: 0 5px;
 }
@@ -287,6 +293,7 @@ td[class^="td-"] {
   border-right: 1px solid var(--table-border); /* design process */
   cursor: pointer;
   text-align: center;
+  transition: .5s;
 }
 
 td[class^="td-"]:nth-child(1) {

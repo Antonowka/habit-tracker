@@ -24,7 +24,7 @@ if (localStorage.getItem('RS-notes') === null) {
     UPDATE();
 }
 
-const currDate = new Date().toISOString().slice(0, 10);
+export const currDate = new Date().toISOString().slice(0, 10);
 
 export const allNotes = JSON.parse(localStorage.getItem('RS-notes') || '');
 

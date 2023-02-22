@@ -8,6 +8,38 @@
   transition: box-shadow .2s ease;
   overflow: hidden;
   touch-action: none;
+  animation: 0.5s show ease;
+}
+
+@media (max-width: 1200px) {
+  .sticky-note {
+    max-height: 200px;
+    width: 180px;
+  }
+}
+@media (max-width: 810px) {
+  .sticky-note {
+    max-height: 195px;
+    width: 160px;
+  }
+}
+@media (max-width: 810px) {
+  .sticky-note {
+    max-height: 195px;
+    width: 160px;
+  }
+}
+@media (max-width: 640px) {
+  .sticky-note {
+    max-height: 190px;
+    width: 155px;
+  }
+}
+@media (max-width: 480px) {
+  .sticky-note {
+    max-height: 180px;
+    width: 140px;
+  }
 }
 
 .sticky-note:hover {
@@ -45,7 +77,6 @@
     font-size: 16px;
   }
 }
-
 @media (max-width: 810px){
   .modal-add-note {
     width: 350px;
@@ -59,7 +90,6 @@
     top: 18px;
   }
 }
-
 @media (max-width: 560px){
   .modal-add-note {
     width: 300px;
@@ -109,6 +139,22 @@
   cursor: grab;
 }
 
+@media (max-width: 1200px) {
+  .note-header{
+    height: 32px;
+  }
+}
+@media (max-width: 810px) {
+  .note-header{
+    height: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .note-header{
+    height: 28px;
+  }
+}
+
 .note-header:active{
   cursor: grabbing;
 }
@@ -122,13 +168,44 @@
   color: var(--sticker-fonts);
 }
 
+@media (max-width: 1200px) {
+  .note-header > span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 810px) {
+  .note-header > span {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 560px) {
+  .note-header > span {
+    font-size: 0.8rem;
+  }
+}
+
 .note-body {
   padding: 10px;
   color: var(--sticker-fonts);
   font-family: 'Julee', cursive;
   font-size: 20px;
   word-break: break-all;
-  
+}
+
+@media (max-width: 1200px) {
+  .note-body {
+    font-size: 18px;
+  }
+}
+@media (max-width: 810px) {
+  .note-body {
+    font-size: 17px;
+  }
+}
+@media (max-width: 560px) {
+  .note-body {
+    font-size: 16px;
+  }
 }
 
 .btn-note-close,
@@ -162,4 +239,45 @@
   right: 25px;
   vertical-align: center;
   transform: rotate(135deg);
+}
+
+@media (max-width: 1200px) {
+  .btn-note-close,
+  .btn-note-edit {
+    width: 18px;
+    height: 18px;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 810px) {
+  .btn-note-close,
+  .btn-note-edit {
+    width: 16px;
+    height: 16px;
+    font-size: 1rem;
+  }
+  .btn-note-close {
+    top: 8px;
+    right: 9px;
+  }
+  .btn-note-edit {
+    top: 8px;
+    right: 25px;
+  }
+}
+@media (max-width: 560px) {
+  .btn-note-close,
+  .btn-note-edit {
+    width: 16px;
+    height: 16px;
+    font-size: 0.9rem;
+  }
+  .btn-note-close {
+    top: 6px;
+    right: 9px;
+  }
+  .btn-note-edit {
+    top: 6px;
+    right: 25px;
+  }
 }
