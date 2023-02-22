@@ -13,7 +13,7 @@ export function createBody() {
 export function createNote() {
     const body: MyNotesList = [
         {
-            text: '',
+            text: 'Hello to Habit!',
             date: '',
             color: '',
             posLeft: 0,
