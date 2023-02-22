@@ -1,9 +1,6 @@
 import { returnThemes } from '../auth/token';
 import { UPDATE } from '../dataChangeLocal/dataChange';
 
-// async function returnTheme() {
-//     return getMode;
-//}/
 export async function switchTheme() {
     const body: HTMLElement = document.querySelector('body') as HTMLElement;
     const modeToggle: HTMLElement = document.querySelector('.dark-light') as HTMLElement;
