@@ -7,7 +7,7 @@ export function validation() {
     emailInput.onblur = function () {
         if (!emailInput.value.includes('@')) {
             emailInput.classList.add('invalid');
-            emailError.innerHTML = 'Пожалуйста, введите правильный email.';
+            emailError.innerHTML = 'Please enter the correct email address';
             if (enterButton) {
                 enterButton.disabled = true;
             }
@@ -35,7 +35,13 @@ export function validation() {
     LoginInput.onblur = function () {
         if (LoginInput.value.length === 0) {
             LoginInput.classList.add('invalid');
-            loginError.innerHTML = 'Введите логин';
+            loginError.innerHTML = 'Enter your login';
+            if (createButton) {
+                createButton.disabled = true;
+            }
+        } else if (LoginInput.value.length <= 2 || LoginInput.value.length === 16) {
+            LoginInput.classList.add('invalid');
+            loginError.innerHTML = 'The length of the login must be at least 3 and no more than 16 characters';
             if (createButton) {
                 createButton.disabled = true;
             }
@@ -57,7 +63,7 @@ export function validation() {
     passwordInput.onblur = function () {
         if (passwordInput.value.length < 6) {
             passwordInput.classList.add('invalid');
-            passwordError.innerHTML = 'Пароль должен быть не менее 6 символов';
+            passwordError.innerHTML = 'The password must be at least 6 characters long';
             if (enterButton) {
                 enterButton.disabled = true;
             }
