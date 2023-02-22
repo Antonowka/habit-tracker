@@ -15,7 +15,7 @@ export function createNote() {
         {
             text: 'Hello to Habit!',
             date: '',
-            color: '',
+            color: '#FFE76E',
             posLeft: 0,
             posTop: 0,
             zIndex: 0,
