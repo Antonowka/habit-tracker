@@ -1,4 +1,5 @@
 import { MyHabitsList, MyNotesList } from '../../interface/interface';
+import { currDate } from '../notes/notes';
 
 export function createBody() {
     const body: MyHabitsList = [
@@ -14,12 +15,12 @@ export function createNote() {
     const body: MyNotesList = [
         {
             text: 'Hello to Habit!',
-            date: '',
+            date: `${currDate}`,
             color: '#FFE76E',
-            posLeft: 0,
-            posTop: 0,
-            zIndex: 0,
-            degRotate: 0,
+            posLeft: 150,
+            posTop: 150,
+            zIndex: 1,
+            degRotate: -3,
         },
     ];
     return body;
