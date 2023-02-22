@@ -5,6 +5,7 @@ import { nodsFooter } from '../nodes/footerNode';
 import { switchTheme } from '../themes/themeSwitcher';
 import { insertAddNoteBtn } from '../notes/notes';
 import { createNotes } from '../notes/notes';
+import { howItWorkButton } from '../howItWorks/howItWork';
 
 export const renderMainPage = () => {
     nodsHeader();
@@ -15,4 +16,5 @@ export const renderMainPage = () => {
     nodsFooter();
     switchTheme();
     createNotes();
+    howItWorkButton();
 };
