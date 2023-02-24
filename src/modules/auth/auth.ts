@@ -96,6 +96,7 @@ function authorizationChangeButton() {
                 .then((id) => {
                     if (id) {
                         saveTokenAndName('IDForFined', id);
+                        saveTokenAndName('RS-notes', JSON.stringify(createNote()));
                         readAllUsersToBD(email);
                         hidePage();
                         renderMainPage();
