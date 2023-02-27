@@ -14,11 +14,11 @@
   z-index: -100;
   top: 100px;
   left: 50%;
-  padding: 20px;
+  padding-right: 10px;
   transform: translateX(-50%);
-  max-width: 550px;
+  max-width: 650px;
   width: calc(100vw - 40px);
-  height: 500px;
+  height: 600px;
   background: var(--main-color);
   border-radius: var(--border-radius);
   opacity: 0;
@@ -27,8 +27,49 @@
 
 @media (max-width: 560px){
   .how-work-modal {
-    height: 400px;
+    height: 450px;
   }
+}
+
+.how-work-wrapper{
+  width: 100%;
+  height: 490px;
+}
+
+@media (max-width: 560px){
+  .how-work-wrapper {
+    height: 350px;
+  }
+}
+
+.modal-howTo-text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 20px;
+}
+
+.modal-howTo-text > p {
+  padding-top: 10px;
+  font-size: 18px;
+  text-align: start;
+  color: var(--main-font-color);
+}
+
+.animation > img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 8px var(--main-font-color);
+}
+
+.subtitle {
+  font-size: 24px;
+  margin: 10px 0;
+  font-weight: 500;
+  text-align: center;
+  color: var(--main-font-color);
 }
 
 .how-work-modal.active{
@@ -43,7 +84,7 @@
 .modal-header-how{
   color: var(--main-font-color);
   text-align: center;
-  margin-top: 50px;
+  margin: 40px 0 20px 0;
   font-size: 34px;
 }
 
@@ -52,11 +93,23 @@
     margin-top: 50px;
     font-size: 30px;
   }
+  .subtitle{
+    font-size: 22px;
+  }
+  .modal-howTo-text > p {
+    font-size: 17px;
+  }
 }
 @media (max-width: 810px){
   .modal-header-how{
     margin-top: 40px;
     font-size: 26px;
+  }
+  .subtitle{
+    font-size: 20px;
+  }
+  .modal-howTo-text > p {
+    font-size: 16px;
   }
 }
 @media (max-width: 560px){
@@ -64,21 +117,13 @@
     margin-top: 30px;
     font-size: 22px;
   }
-}
-
-.modal-howTo-text{
-  height: 380px;
-  overflow: scroll;
-}
-
-.modal-howTo-text > p {
-  padding-top: 10px;
-}
-
-.animation > img {
-  width: 100%;
-}
-
-.subtitle {
-  font-size: 24px;
+  .subtitle{
+    font-size: 18px;
+  }
+  .modal-howTo-text > p {
+    font-size: 14px;
+  }
+  .modal-howTo-text{
+    padding: 0 10px;
+  }
 }
