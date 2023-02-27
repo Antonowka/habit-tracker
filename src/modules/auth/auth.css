@@ -1,0 +1,105 @@
+label {
+    font-size: 24px;
+}
+
+.auth__form input {
+    padding: 10px;
+    height: 40px;
+    font-size: 24px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--main-font-color)
+}
+
+.buttonAuth {
+    height: 50px;
+    width: 80%;
+    color: aliceblue;
+    background-color: var(--main-font-color);
+    margin: 0 auto;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.buttonAuth[disabled] {
+    color: #d2d5db;
+    background: #6c7589;
+    cursor: not-allowed;
+}
+
+.authorizationConteiner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 400px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--table-border);
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+.authorizationButtonsChangeConteiner {
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.wrapperButtonChange {
+    display: flex;
+    gap: 20px;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--main-font-color);
+}
+
+.buttonAuth:active {
+    background-color: cadetblue;
+}
+
+.registration {
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.createButton {
+    width: 350px;
+}
+
+.registration:active {
+    color: var(--main-font-color);
+}
+
+.wrapperRegistrationText {
+    display: flex;
+    justify-content: end;
+}
+
+.showError {
+    color: deeppink;
+}
+
+.invalid {
+    border: 2px solid var(--main-red);
+    border-radius: var(--border-radius);
+}
+
+.error {
+    color: var(--main-red);
+}
+
+.activeAuth {
+    background-color: var(--table-border);
+    color: var(--main-color);
+    border: none;
+}
+
+.hideAuth {
+    display: none;
+}
