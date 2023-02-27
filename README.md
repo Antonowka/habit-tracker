@@ -12,6 +12,13 @@ Final task JSFE2023Q3 ([RS-Clone](https://github.com/rolling-scopes-school/tasks
 
 Developers: [@Antonowka](https://github.com/Antonowka), [@max7394](https://github.com/max7394), [@Sergey-Lesnevskiy](https://github.com/Sergey-Lesnevskiy)
 
+## Technologies
+- [TypeScript](https://www.typescriptlang.org/)
+- [FireBase](https://firebase.google.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Webpack](https://webpack.js.org/)
+
 ## Installation
 
 - Clone this repository on your computer.
