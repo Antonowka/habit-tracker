@@ -1,3 +1,7 @@
+body.stop-scroll{
+  overflow: hidden;
+}
+
 .transparent-modal-how {
   position: fixed;
   top: 0;
