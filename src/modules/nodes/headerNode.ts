@@ -25,6 +25,7 @@ export const nodsHeader = () => {
           <div class="how-work-wrapper">
             <div class="modal-header-how">How it works?</div>
             <button class="btn-modal-close">X</button>
+            <div class="modal-howTo-text"></div>
           </div>
         </div>
 

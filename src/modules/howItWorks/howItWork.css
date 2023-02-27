@@ -65,3 +65,20 @@
     font-size: 22px;
   }
 }
+
+.modal-howTo-text{
+  height: 380px;
+  overflow: scroll;
+}
+
+.modal-howTo-text > p {
+  padding-top: 10px;
+}
+
+.animation > img {
+  width: 100%;
+}
+
+.subtitle {
+  font-size: 24px;
+}
