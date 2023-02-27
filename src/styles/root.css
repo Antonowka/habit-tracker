@@ -6,11 +6,8 @@ all everything that is used more than once in the project
 :root{
   --main-color: #fff;
   --main-font-color: #444;
-  --nav-color: #e0e0e0;
   --main-red: #ff4343bf;
-  --hover-footer: #adadad;
-  --border-radius: 8px;
-
+  --border-radius: 5px;
   /* Table roots */
   --table-border: #9b9b9ba8;
   --current-day: #6e8dff;
@@ -23,13 +20,4 @@ all everything that is used more than once in the project
   --habit-6: #dfdfdfe0; 
   --habit-7: #e1a3a3ad;
   --habit-achieved: #4eb53edb;
-  /* Theme dark-mode */
-}
-
-body.dark{
-  --main-color: #35363A;
-  --nav-color: #202124;
-  --main-font-color: #f3f3f3;
-  --main-red: #ff8a8abf;
-  transition: all 0.4s ease;
 }

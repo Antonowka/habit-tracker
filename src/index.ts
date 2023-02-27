@@ -1,5 +1,7 @@
 import './styles/main.css';
 
-import { checkToken } from './modules/auth/auth';
+import { renderCalendar, curMonths, curYears } from './modules/calendar/calendar';
+import { insertAddBtn, calendarDiv } from './modules/habit/habit';
 
-checkToken();
+renderCalendar(curMonths, curYears);
+calendarDiv?.after(insertAddBtn());

@@ -2,7 +2,6 @@
 
 .calendar {
     margin: 0 auto;
-    transition: all 0.4s ease;
 }
 
 .header-calendar {
@@ -37,7 +36,7 @@
 }
 
 .table {
-    margin: 0 auto;
+    margin-left: 100px;
 }
 
 .table-head {
@@ -57,7 +56,6 @@
 .body-cell-habits,
 .body-cell-goal,
 .body-cell-achieved{
-  color: var(--main-font-color);
   padding: 0 20px;
   text-align: center;
   border-bottom: 1px solid var(--table-border);  /* design process */
@@ -65,7 +63,6 @@
 
 .body-cell{
     height: 45px;
-    color: var(--main-font-color);
 }
 
 .header-cell:nth-child(2){
@@ -95,9 +92,9 @@
 
 .header-calendar {
     display: flex;
+    margin-top: 30px;
     align-items: center;
     gap: 30px;
-    margin-top: 100px;
 }
 
 .current-day{
