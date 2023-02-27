@@ -1,12 +1,11 @@
 import './calendar.css';
-import { main } from '../nodes/mainNodes';
 
 export const curMonths = new Date().getMonth();
 export const curYears = new Date().getFullYear();
 
 const calendar = document.createElement('div') as HTMLElement;
 calendar.className = 'calendar';
-main.appendChild(calendar);
+document.body.appendChild(calendar);
 
 const headerCalendar = document.createElement('div') as HTMLElement;
 headerCalendar.className = 'header-calendar';
