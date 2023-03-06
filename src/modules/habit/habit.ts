@@ -2,6 +2,7 @@ import { clickBtn } from './modalHabit';
 import { allHabits } from './modalHabit';
 import { getModalEdit } from './editHabit';
 import { UPDATE } from '../dataChangeLocal/dataChange';
+import { array } from './ArrayColors';
 
 const newHabitBtn = document.createElement('button');
 newHabitBtn.className = 'btn-new-habit';
@@ -122,17 +123,29 @@ export function countAchieved(e: Event) {
     (tdAchieved as HTMLElement).innerHTML = `${countElements.length}`;
 
     if (Number(tdAchieved?.textContent) >= Number(tdGoal.textContent)) {
+        (tdAchieved as HTMLElement).style.background = '';
         tdAchieved?.classList.add('td-complete');
     } else {
+        const color = parentEl?.className.slice(-1);
+        colorAchive(
+            Number(tdAchieved?.textContent),
+            Number(tdGoal.textContent),
+            tdAchieved as HTMLElement,
+            array[Number(color) - 1]
+        );
         tdAchieved?.classList.remove('td-complete');
     }
+}
+
+export function colorAchive(achive: number, goal: number, tdAchieved: HTMLElement, color = '#4eb53edb') {
+    const procent = (achive / goal) * 100;
+    tdAchieved.style.background = `linear-gradient(to right,${color} ${procent}%, transparent ${procent}%)`;
 }
 
 export function countAchievedUpdate() {
     const allColoredTd = document.querySelectorAll('.td-colored');
     const allColoredTdArray = Array.prototype.slice.call(allColoredTd);
     const allRow = document.querySelectorAll('[class^="row-"]');
-
     allColoredTdArray.forEach(
         (el) =>
             ((((document.querySelector(`.${el.parentElement.className}`)?.lastChild as HTMLElement)
@@ -140,7 +153,6 @@ export function countAchievedUpdate() {
                 Number((document.querySelector(`.${el.parentElement.className}`)?.lastChild as HTMLElement).innerHTML) +
                 1)
     );
-
     for (let index = 0; index < allRow.length; index++) {
         if (
             Number((allRow as NodeList)[index].lastChild?.textContent) >=
@@ -150,6 +162,16 @@ export function countAchievedUpdate() {
         ) {
             ((allRow as NodeList)[index].lastChild as HTMLElement).classList.add('td-complete');
         } else {
+            const color = ((allRow as NodeList)[index] as HTMLElement).classList.value.slice(-1);
+            colorAchive(
+                Number((allRow as NodeList)[index].lastChild?.textContent),
+                Number(
+                    (allRow as NodeList)[index].childNodes[(allRow as NodeList)[index].childNodes.length - 2]
+                        .textContent
+                ),
+                (allRow as NodeList)[index].lastChild as HTMLElement,
+                array[Number(color) - 1]
+            );
             ((allRow as NodeList)[index].lastChild as HTMLElement).classList.remove('td-complete');
         }
     }
