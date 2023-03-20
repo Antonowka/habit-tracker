@@ -126,7 +126,8 @@ export function countAchieved(e: Event) {
         (tdAchieved as HTMLElement).style.background = '';
         tdAchieved?.classList.add('td-complete');
     } else {
-        const color = parentEl?.className.slice(-1);
+        const color = parentEl?.className.split('-')[1];
+        console.log(parentEl?.className.split('-')[1]);
         colorAchive(
             Number(tdAchieved?.textContent),
             Number(tdGoal.textContent),
@@ -162,7 +163,7 @@ export function countAchievedUpdate() {
         ) {
             ((allRow as NodeList)[index].lastChild as HTMLElement).classList.add('td-complete');
         } else {
-            const color = ((allRow as NodeList)[index] as HTMLElement).classList.value.slice(-1);
+            const color = ((allRow as NodeList)[index] as HTMLElement).classList.value.split('-')[1];
             colorAchive(
                 Number((allRow as NodeList)[index].lastChild?.textContent),
                 Number(
